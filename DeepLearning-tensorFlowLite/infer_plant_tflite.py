@@ -2,7 +2,7 @@
 """
 Run the exported plant_classifier.tflite on a single image and print top-k species with %.
 
-Preprocessing matches train_export_tflite.py (RGB float32 [0,1], NHWC):
+Preprocessing matches train_export_tflite.py (RGB float32 [0,1], NHWC, optional --color_correct):
   float32 NHWC [1,H,W,3], RGB, values in [0, 1] (divide by 255).
 
 Example:
@@ -19,6 +19,8 @@ from pathlib import Path
 
 import numpy as np
 import tensorflow as tf
+
+import color_correction
 
 # --- Preprocessing and postprocessing helpers (match training script) ---
 
@@ -56,6 +58,13 @@ def main() -> None:
     p.add_argument("--image", type=Path, required=True, help="JPEG/PNG etc.")
     p.add_argument("--top_k", type=int, default=10)
     p.add_argument("--img_size", type=int, default=224, help="Must match training export")
+    p.add_argument(
+        "--color_correct",
+        type=str,
+        default="none",
+        choices=color_correction.COLOR_METHODS,
+        help="Must match training (see train_export_tflite.py --color_correct)",
+    )
     args = p.parse_args()
 
     if not args.model.is_file():
@@ -87,6 +96,9 @@ def main() -> None:
         h, w = int(in_shape[1]), int(in_shape[2])
 
     hwc = _load_image_rgb01(args.image, h, w)
+    hwc_b = tf.expand_dims(tf.constant(hwc, dtype=tf.float32), 0)
+    hwc_b = color_correction.apply_color_rgb01_bhwc(hwc_b, args.color_correct)
+    hwc = hwc_b[0].numpy()
     x = np.expand_dims(hwc, axis=0)
 
     if nchw:

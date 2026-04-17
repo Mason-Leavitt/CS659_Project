@@ -1,2 +1,6 @@
 # Train & export TFLite plant classifier (Python 3.10+)
 tensorflow>=2.14.0,<2.19.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+scikit-image>=0.22.0
+joblib>=1.3.0
