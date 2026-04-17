@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Train a small image classifier and export TensorFlow Lite for Growzi.
+Train a small image classifier and export TensorFlow Lite for on-device use.
 
 Dataset layout (folder-per-class):
   data/
@@ -14,7 +14,7 @@ This script trains with the same convention — no ImageNet mean/std in the grap
 
 Writes:
   - plant_classifier.tflite  (copy to app/src/main/assets/ml/)
-  - plant_labels_growzi.txt    (copy lines to app/.../assets/ml/plant_labels.txt)
+  - plant_labels_export.txt    (copy lines to app/.../assets/ml/plant_labels.txt)
 
 Class index order = sorted folder names (must match plant_labels.txt line order).
 """
@@ -155,7 +155,7 @@ def main() -> None:
     p.add_argument(
         "--out_labels",
         type=Path,
-        default=Path("plant_labels_growzi.txt"),
+        default=Path("plant_labels_export.txt"),
     )
     p.add_argument("--validation_split", type=float, default=0.15)
     p.add_argument("--seed", type=int, default=42)
@@ -163,7 +163,7 @@ def main() -> None:
 
     # --- Resolve paths, discover classes, write label file (order = model class indices) ---
     _log(
-        "Growzi TFLite export — "
+        "TFLite export — "
         f"data_dir={args.data_dir!s} img_size={args.img_size} batch_size={args.batch_size} "
         f"epochs={args.epochs} lr={args.learning_rate} validation_split={args.validation_split}"
     )
@@ -206,7 +206,7 @@ def main() -> None:
         label_mode="categorical",
     )
 
-    # uint8 [0,255] -> float32 [0,1] to match Growzi TflitePlantClassifier preprocessing
+    # uint8 [0,255] -> float32 [0,1] to match typical on-device TFLite preprocessing
     norm = tf.keras.layers.Rescaling(1.0 / 255.0)
     train_ds = train_ds.map(lambda x, y: (norm(x), y), num_parallel_calls=tf.data.AUTOTUNE)
     val_ds = val_ds.map(lambda x, y: (norm(x), y), num_parallel_calls=tf.data.AUTOTUNE)

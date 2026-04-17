@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Map PlantNet numeric species IDs in plant_labels_growzi.txt to scientific names.
+Map PlantNet numeric species IDs in a label file (e.g. plant_labels_export.txt) to scientific names.
 
 Class index order must not change — only the text per line. Use the output as
 app/src/main/assets/ml/plant_labels.txt (same line count and order as the model).
@@ -20,7 +20,7 @@ def main() -> None:
         "--labels",
         type=Path,
         required=True,
-        help="Label file with one species id per line (e.g. plant_labels_growzi.txt)",
+        help="Label file with one species id per line (e.g. plant_labels_export.txt)",
     )
     p.add_argument(
         "--species_json",

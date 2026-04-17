@@ -2,7 +2,7 @@
 
 ## 1. What deep learning is used for here
 
-This folder trains a **plant species image classifier**: photos go in, and the model outputs scores over many classes (PlantNet-style species IDs or scientific names in the label file). The network is a **MobileNetV2** backbone with a small dense “head” on top. After training, the model is **exported to TensorFlow Lite (`.tflite`)** so it can run on-device in the Growzi Android app with the same preprocessing (RGB, float32 or uint8, resized to the training height/width).
+This folder trains a **plant species image classifier**: photos go in, and the model outputs scores over many classes (PlantNet-style species IDs or scientific names in the label file). The network is a **MobileNetV2** backbone with a small dense “head” on top. After training, the model is **exported to TensorFlow Lite (`.tflite`)** so it can run on-device on Android with the same preprocessing (RGB, float32 or uint8, resized to the training height/width).
 
 The model is a **convolutional neural network (CNN)**: deep learning for images here means stacked convolutional layers that learn spatial patterns (edges, textures, parts of leaves) before the final layers map those features to species classes. MobileNetV2 is a CNN architecture designed to stay efficient on mobile and edge devices.
 
@@ -21,11 +21,11 @@ Python **3.10+** is expected. Version pins live in `requirements-tflite.txt`.
 
 | File | Purpose |
 |------|---------|
-| **`train_export_tflite.py`** | Builds train/validation datasets from a folder-per-class tree, trains MobileNetV2 + classifier, writes **`plant_classifier.tflite`** and **`plant_labels_growzi.txt`** (sorted folder names = class indices). |
+| **`train_export_tflite.py`** | Builds train/validation datasets from a folder-per-class tree, trains MobileNetV2 + classifier, writes **`plant_classifier.tflite`** and **`plant_labels_export.txt`** (sorted folder names = class indices). |
 | **`map_plantnet_ids_to_names.py`** | Maps numeric PlantNet species IDs in a label file to scientific names using **`plantnet300K_species_id_2_name.json`**; keeps **line order** so indices still match the trained model. |
 | **`infer_plant_tflite.py`** | Loads a `.tflite` model and a label file, preprocesses one image like the app, runs inference, prints **top-k** species with percentages. |
 | **`requirements-tflite.txt`** | Pip dependencies for training/export/inference. |
-| **`plant_labels_growzi.txt`** / **`plant_labels_scientific.txt`** | Example label lists (one label per line, order = class index). Replace or regenerate to match your training data. |
+| **`plant_labels_export.txt`** / **`plant_labels_scientific.txt`** | Example label lists (one label per line, order = class index). Replace or regenerate to match your training data. |
 
 ## 4. How to install
 
@@ -72,7 +72,7 @@ You do **not** need to install NVIDIA drivers or CUDA on your own computer for t
 4. **Put your dataset** on the instance (upload, `git`, or cloud storage), then train (example):
 
    ```bash
-   python train_export_tflite.py --data_dir /path/to/your/data --out_tflite plant_classifier.tflite --out_labels plant_labels_growzi.txt
+   python train_export_tflite.py --data_dir /path/to/your/data --out_tflite plant_classifier.tflite --out_labels plant_labels_export.txt
    ```
 
 5. **Download** `plant_classifier.tflite` and your label file back to your laptop for the app or for local `infer_plant_tflite.py` tests.
@@ -83,7 +83,7 @@ You do **not** need to install NVIDIA drivers or CUDA on your own computer for t
 
 ## 6. Converting PlantNet species IDs to scientific names
 
-Training with folders named after **numeric PlantNet species IDs** produces `plant_labels_growzi.txt` with one ID per line. For readable names in the app or in `infer_plant_tflite.py`, map those IDs to **scientific names** with `map_plantnet_ids_to_names.py`.
+Training with folders named after **numeric PlantNet species IDs** produces `plant_labels_export.txt` with one ID per line. For readable names in the app or in `infer_plant_tflite.py`, map those IDs to **scientific names** with `map_plantnet_ids_to_names.py`.
 
 1. **Get the ID-to-name JSON** from the **Pl@ntNet-300K** dataset on Zenodo (same vocabulary as the paper/dataset):  
    [https://zenodo.org/records/5645731](https://zenodo.org/records/5645731)  
@@ -94,14 +94,14 @@ Training with folders named after **numeric PlantNet species IDs** produces `pla
 
    ```bash
    python map_plantnet_ids_to_names.py \
-     --labels plant_labels_growzi.txt \
+     --labels plant_labels_export.txt \
      --species_json /path/to/plantnet300K_species_id_2_name.json \
      --out plant_labels_scientific.txt
    ```
 
    The script **does not reorder lines**: line *i* stays class index *i*. Only the text on each line changes from ID to scientific name. IDs missing from the JSON are left as-is and a warning is printed.
 
-3. Use **`plant_labels_scientific.txt`** as `--labels` for `infer_plant_tflite.py` or copy lines into the Android app’s `plant_labels.txt` **in the same order** as `plant_labels_growzi.txt`.
+3. Use **`plant_labels_scientific.txt`** as `--labels` for `infer_plant_tflite.py` or copy lines into the Android app’s `plant_labels.txt` **in the same order** as `plant_labels_export.txt`.
 
 ## 7. Example: test the model in Python
 

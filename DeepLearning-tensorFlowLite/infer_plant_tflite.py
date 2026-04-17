@@ -2,7 +2,7 @@
 """
 Run the exported plant_classifier.tflite on a single image and print top-k species with %.
 
-Preprocessing matches Growzi [TflitePlantClassifier] + train_export_tflite.py:
+Preprocessing matches train_export_tflite.py (RGB float32 [0,1], NHWC):
   float32 NHWC [1,H,W,3], RGB, values in [0, 1] (divide by 255).
 
 Example:
@@ -20,7 +20,7 @@ from pathlib import Path
 import numpy as np
 import tensorflow as tf
 
-# --- Preprocessing and postprocessing helpers (match Growzi + training script) ---
+# --- Preprocessing and postprocessing helpers (match training script) ---
 
 
 def _read_labels(path: Path) -> list[str]:

@@ -1,2 +1,2 @@
-# Train & export TFLite for Growzi (Python 3.10+)
+# Train & export TFLite plant classifier (Python 3.10+)
 tensorflow>=2.14.0,<2.19.0
