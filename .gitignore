@@ -1,0 +1,24 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Custom files
+
+# contains OpenAI API key, one line => "OPENAI_API_KEY=" then your key
+.env
+
+# created during "uv init", should be Python 3.13
+.python-version
+pyproject.toml
+
+# created when first running the app using "streamlit run app.py"
+__pycache__
+uv.lock
+yolov8n.pt
