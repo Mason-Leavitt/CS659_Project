@@ -1,7 +1,7 @@
 # app.py
 
 import streamlit as st
-import agent_funcs as ag
+import agent as ag
 
 st.set_page_config(page_title="Vision Agent", layout="centered")
 
