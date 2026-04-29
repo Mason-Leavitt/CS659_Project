@@ -33,6 +33,8 @@ from sklearn.metrics import (
 )
 from sklearn.preprocessing import label_binarize
 
+from classification_metrics_sklearn import sklearn_metrics_from_labels
+
 CSV_FIELDNAMES = [
     "epoch",
     "accuracy",
@@ -80,7 +82,7 @@ def compute_sklearn_metrics(
         "recall_macro": float(recall_score(y_true, y_pred, average="macro", zero_division=0)),
     }
     try:
-        if num_classes < 2:
+        if num_classes < 2 or np.unique(y_true).size < 2:
             out["roc_auc_ovr_macro"] = float("nan")
         elif num_classes == 2:
             out["roc_auc_ovr_macro"] = float(roc_auc_score(y_true, y_prob[:, 1]))
@@ -127,8 +129,17 @@ def plot_confusion_and_correlation(
     plt.close(fig)
 
     if cm_norm.shape[0] >= 2:
-        corr = np.corrcoef(cm_norm)
-        corr = np.nan_to_num(corr, nan=0.0)
+        # Rows with zero variance (e.g. no samples for that true class) break corrcoef division.
+        row_std = cm_norm.std(axis=1)
+        usable = row_std > 1e-12
+        if usable.sum() >= 2:
+            corr_full = np.zeros((cm_norm.shape[0], cm_norm.shape[0]), dtype=np.float64)
+            sub = np.corrcoef(cm_norm[usable])
+            idx = np.flatnonzero(usable)
+            corr_full[np.ix_(idx, idx)] = sub
+            corr = np.nan_to_num(corr_full, nan=0.0)
+        else:
+            corr = np.eye(cm_norm.shape[0], dtype=np.float64)
         k = min(max_labels_plot, corr.shape[0])
         fig, ax = plt.subplots(figsize=(10, 8))
         im = ax.imshow(corr[:k, :k], interpolation="nearest", cmap="coolwarm", vmin=-1, vmax=1)
@@ -154,6 +165,7 @@ def plot_multiclass_roc(
     y_prob: np.ndarray,
     num_classes: int,
     out_dir: Path,
+    class_names: Optional[list[str]] = None,
     max_curves: int = 12,
 ) -> None:
     if num_classes < 2:
@@ -184,7 +196,11 @@ def plot_multiclass_roc(
         try:
             fpr_c, tpr_c, _ = roc_curve(y_bin, y_prob[:, c])
             auc_c = float(auc(fpr_c, tpr_c))
-            ax.plot(fpr_c, tpr_c, alpha=0.35, label=f"class {c} (AUC≈{auc_c:.2f})")
+            if class_names and len(class_names) == num_classes:
+                class_label = class_names[c]
+            else:
+                class_label = f"class {c}"
+            ax.plot(fpr_c, tpr_c, alpha=0.35, label=f"{class_label} (AUC≈{auc_c:.2f})")
             plotted += 1
         except ValueError:
             continue
@@ -219,6 +235,42 @@ def save_classification_report_txt(
 
 def save_summary_json(path: Path, metrics: dict[str, Any]) -> None:
     path.write_text(json.dumps(metrics, indent=2), encoding="utf-8")
+
+
+def evaluate_cnn_split(
+    model: tf.keras.Model,
+    ds: tf.data.Dataset,
+    *,
+    num_classes: int,
+    class_names: Optional[list[str]],
+    out_dir: Path,
+    split_name: str,
+) -> dict[str, float]:
+    """
+    Run sklearn metrics + classification report + confusion + ROC on one labeled dataset.
+    Writes under out_dir/<split_name>/.
+    """
+    out_dir = Path(out_dir) / split_name
+    out_dir.mkdir(parents=True, exist_ok=True)
+    y_true, y_prob = gather_y_true_and_probs(model, ds)
+    y_pred = np.argmax(y_prob, axis=1)
+    m = compute_sklearn_metrics(y_true, y_prob, num_classes)
+    save_summary_json(out_dir / "metrics_summary.json", {**m, "split": split_name, "num_classes": num_classes})
+    save_classification_report_txt(
+        y_true,
+        y_pred,
+        class_names,
+        out_dir / "classification_report.txt",
+    )
+    plot_confusion_and_correlation(
+        y_true,
+        y_pred,
+        num_classes,
+        class_names,
+        out_dir,
+    )
+    plot_multiclass_roc(y_true, y_prob, num_classes, out_dir, class_names=class_names)
+    return m
 
 
 class ValidationMetricsCallback(tf.keras.callbacks.Callback):
@@ -295,4 +347,4 @@ class ValidationMetricsCallback(tf.keras.callbacks.Callback):
             self.class_names,
             self.log_dir,
         )
-        plot_multiclass_roc(y_true, y_prob, self.num_classes, self.log_dir)
+        plot_multiclass_roc(y_true, y_prob, self.num_classes, self.log_dir, class_names=self.class_names)

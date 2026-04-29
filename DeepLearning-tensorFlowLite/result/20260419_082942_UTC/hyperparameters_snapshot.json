@@ -1,0 +1,25 @@
+{
+  "runtime_cli_overrides": {
+    "config": null,
+    "data_dir": "../plantnet_300K/images",
+    "img_size": 224,
+    "batch_size": 16,
+    "epochs": 25,
+    "learning_rate": 0.0001,
+    "dropout": 0.2,
+    "early_stopping_patience": 5,
+    "out_tflite": "plant_classifier_deep_learning.tflite",
+    "out_labels": "plant_labels_export.txt",
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15,
+    "seed": 42,
+    "color_correct": "max_rgb",
+    "k_folds": 1,
+    "no_final_retrain": false,
+    "log_dir": null,
+    "max_dataset_cache_mb": 2048.0,
+    "no_metric_logs": false,
+    "save_split_lists": false
+  }
+}

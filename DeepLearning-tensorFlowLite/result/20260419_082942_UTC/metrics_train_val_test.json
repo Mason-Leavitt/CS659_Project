@@ -1,0 +1,39 @@
+{
+  "method": "cnn_mobilenetv2",
+  "img_size": 224,
+  "batch_size": 16,
+  "epochs_requested": 25,
+  "learning_rate": 0.0001,
+  "dropout": 0.2,
+  "early_stopping_patience": 5,
+  "color_correct": "max_rgb",
+  "k_folds": 1,
+  "metrics": {
+    "train": {
+      "accuracy": 0.7704687777062277,
+      "f1_macro": 0.5043483475640707,
+      "f1_weighted": 0.7557205159316354,
+      "precision_macro": 0.6631856089208333,
+      "recall_macro": 0.46956323405687383,
+      "roc_auc_ovr_macro": 0.9990730140362596,
+      "note": "in-sample; optimistic vs val/test"
+    },
+    "validation": {
+      "accuracy": 0.6200296154348678,
+      "f1_macro": 0.20255334438175254,
+      "f1_weighted": 0.6015809160835583,
+      "precision_macro": 0.23468397571404115,
+      "recall_macro": 0.20446638976521242,
+      "roc_auc_ovr_macro": NaN
+    },
+    "test": {
+      "accuracy": 0.6178955620399809,
+      "f1_macro": 0.18896388773275483,
+      "f1_weighted": 0.5989187025033187,
+      "precision_macro": 0.2153972474114526,
+      "recall_macro": 0.19337050999272978,
+      "roc_auc_ovr_macro": 0.9796616781152192,
+      "note": "held-out"
+    }
+  }
+}

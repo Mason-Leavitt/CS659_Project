@@ -1,0 +1,9 @@
+              precision    recall  f1-score   support
+
+        test       0.07      0.02      0.03       508
+       train       0.80      0.94      0.86      3984
+         val       0.14      0.04      0.06       508
+
+    accuracy                           0.76      5000
+   macro avg       0.34      0.33      0.32      5000
+weighted avg       0.66      0.76      0.70      5000

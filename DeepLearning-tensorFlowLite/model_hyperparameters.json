@@ -1,0 +1,38 @@
+{
+  "description": "Edit this file to tune experiments. Load with --config model_hyperparameters.json on train_hog_svm.py and train_export_tflite.py. CLI flags override these values. For fair classical vs deep comparison, keep split.seed and split fractions identical; tune traditional.C, hog_*, deep_learning.learning_rate, dropout, epochs, color_correct, etc. Reports: result/*/metrics_train_val_test.json, split_summary.json, hyperparameters_snapshot.json.",
+  "split": {
+    "seed": 42,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15
+  },
+  "traditional": {
+    "img_size": 224,
+    "kernel": "linear",
+    "linear_head": "sklearn",
+    "tf_linear_epochs": 100,
+    "tf_linear_batch_size": 4096,
+    "tf_linear_learning_rate": 0.001,
+    "C": 1.0,
+    "hog_preset": "default",
+    "hog_orientations": 9,
+    "hog_pixels_per_cell": 16,
+    "hog_cells_per_block": 2,
+    "use_gpu_hog": false,
+    "hog_batch_size": 64,
+    "train_sample_fraction": 1.0,
+    "max_train_images": 0,
+    "max_val_images": 0,
+    "max_test_images": 0
+  },
+  "deep_learning": {
+    "img_size": 224,
+    "batch_size": 16,
+    "epochs": 25,
+    "learning_rate": 0.0001,
+    "color_correct": "none",
+    "dropout": 0.2,
+    "early_stopping_patience": 5,
+    "k_folds": 1
+  }
+}

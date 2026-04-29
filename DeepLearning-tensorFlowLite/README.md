@@ -18,14 +18,15 @@ The model is a **convolutional neural network (CNN)**: deep learning for images 
 | **NumPy** | Arrays, softmax for readable probabilities in the inference script |
 | **scikit-learn** | Validation metrics (CNN), HOG+SVM training (`train_hog_svm.py`), CSV/plots from `metrics_logging.py` |
 | **matplotlib** | ROC, confusion matrix, and correlation figures (non-interactive `Agg` backend) |
-| **scikit-image** | HOG feature extraction in `train_hog_svm.py` |
+| **scikit-image** | Default **CPU** HOG in `train_hog_svm.py` (`--no-gpu-hog`) |
+| **`hog_tf.py`** | Optional **TensorFlow** HOG (same math as TFLite); used when **`--gpu-hog`** is set so HOG can run on **GPU** |
 | **joblib** | Save/load the HOG+SVM `Pipeline` |
 
 Python **3.10+** is expected. Version pins live in `requirements-tflite.txt`.
 
 ### Classical vs deep learning comparison
 
-Use **`train_hog_svm.py`** on the **same `--data_dir`** as **`train_export_tflite.py`**. Defaults match where it matters for a fair headline comparison: **`--img_size 224`**, **`--validation_split 0.15`**, **`--seed 42`**. Train/val **image assignments** are not guaranteed to match Keras’ internal split exactly, but stratified fractions and seed align the experimental setup. The HOG pipeline uses **grayscale** edges/gradients only (no color correction options), which is typical for this baseline.
+Use **`train_hog_svm.py`** on the **same `--data_dir`** as **`train_export_tflite.py`**. With the same **`--seed`** and split fractions (default **70% / 15% / 15%** train / validation / test from **`model_hyperparameters.json`** or **`--train_fraction` / `--validation_fraction` / `--test_fraction`**), **the same image files** land in train, validation, and test for both pipelines (path-based stratified splits). Logs: **`metrics_train_val_test.json`**, **`split_summary.json`**, **`hyperparameters_snapshot.json`**. The HOG pipeline uses **grayscale** edges/gradients only (no color correction options), which is typical for this baseline.
 
 Example:
 
@@ -39,12 +40,13 @@ Then compare **`result/hog_svm_*/summary.json`** with the CNN **`metrics_summary
 
 | File | Purpose |
 |------|---------|
-| **`train_export_tflite.py`** | Builds train/validation datasets from a folder-per-class tree, trains MobileNetV2 + classifier, writes **`plant_classifier.tflite`** and **`plant_labels_export.txt`** (sorted folder names = class indices). Optional **`--color_correct`**. Optional **stratified k-fold** via **`--k_folds`**. Writes **metric logs** under **`result/…`** unless **`--no_metric_logs`**. |
+| **`train_export_tflite.py`** | Builds train/validation datasets from a folder-per-class tree, trains MobileNetV2 + classifier, writes **`plant_classifier_deep_learning.tflite`** (default; override with **`--out_tflite`**) and **`plant_labels_export.txt`** (sorted folder names = class indices). Optional **`--color_correct`**. Optional **stratified k-fold** via **`--k_folds`**. Writes **metric logs** under **`result/…`** unless **`--no_metric_logs`**. |
 | **`metrics_logging.py`** | Per-epoch **CSV** (accuracy, F1 macro/weighted, precision/recall macro, ROC AUC OvR + Keras loss/acc) and, after training, **`classification_report.txt`**, **`metrics_summary.json`**, **`confusion_matrix_normalized.png`**, **`confusion_row_correlation.png`** (correlation of normalized confusion rows), **`roc_curves.png`**, and **`confusion_matrix_raw.npz`**. |
 | **`color_correction.py`** | Per-image **gray-world** or **max-RGB** correction on RGB in **[0, 1]** (batched NHWC). Shared by training and inference; module docstring explains method choices. |
+| **`flatten_plantnet.py`** | Merges Pl@ntNet-300K **train / val / test / species_id** trees into **`out/species_id/`** (symlinks or copies) so **`--data_dir`** matches **`train_export_tflite.py`** / **`train_hog_svm.py`**. Optional **`--max-species`**, **`--species-list`**, **`--dry-run`**. |
 | **`map_plantnet_ids_to_names.py`** | Maps numeric PlantNet species IDs in a label file to scientific names using **`plantnet300K_species_id_2_name.json`**; keeps **line order** so indices still match the trained model. |
 | **`infer_plant_tflite.py`** | Loads a `.tflite` model and a label file, preprocesses one image like the app, runs inference, prints **top-k** species with percentages. Optional **`--color_correct`** (must match training). |
-| **`train_hog_svm.py`** | **Classical baseline:** same folder-per-class data as the CNN, **grayscale resize → HOG → StandardScaler → SVM** (`linear` or `rbf`). Writes **`result/hog_svm_<UTC>/`** (`summary.json`, confusion plot, `hog_svm_model.joblib`, label file). Compare **`validation_accuracy` / F1** to CNN metrics. |
+| **`train_hog_svm.py`** | **Classical baseline:** same folder-per-class data as the CNN, **grayscale resize → HOG → StandardScaler → SVM** (`linear` or `rbf`). Writes **`result/hog_svm_<UTC>/`** (`summary.json`, confusion plot, `hog_svm_model.joblib`, label file). Optional **`--gpu-hog`** runs **HOG in TensorFlow** (GPU when available; SVM still CPU). Optional **`--export_tflite`** (linear kernel only) writes **`plant_classifier_traditional.tflite`**. Compare **`validation_accuracy` / F1** to CNN metrics. |
 | **`requirements-tflite.txt`** | Pip dependencies for training/export/inference. |
 | **`plant_labels_export.txt`** / **`plant_labels_scientific.txt`** | Example label lists (one label per line, order = class index). Replace or regenerate to match your training data. |
 
@@ -90,15 +92,17 @@ You do **not** need to install NVIDIA drivers or CUDA on your own computer for t
 
    You should see at least one `GPU` device. `train_export_tflite.py` also logs devices and sets **GPU memory growth** so VRAM is allocated as needed.
 
+   **Classical baseline (HOG+SVM) on GPU:** Training the SVM is still **CPU (sklearn)**; only **HOG feature extraction** can use the GPU. After installing `tensorflow[and-cuda]`, pass **`--gpu-hog`** to `train_hog_svm.py` (see [§8.2.1](#821-gpu-accelerated-hog-traditional-baseline)).
+
 4. **Put your dataset** on the instance (upload, `git`, or cloud storage), then train (example):
 
    ```bash
-   python train_export_tflite.py --data_dir /path/to/your/data --out_tflite plant_classifier.tflite --out_labels plant_labels_export.txt
+   python train_export_tflite.py --data_dir /path/to/your/data --out_tflite plant_classifier_deep_learning.tflite --out_labels plant_labels_export.txt
    ```
 
-   **K-fold cross-validation (`--k_folds` > 1):** The script runs **stratified** k-fold (each class split across folds), trains a fresh model per fold, and logs **mean ± std** of validation accuracy plus per-fold scores. By default it then runs a **final** training pass on the usual **`--validation_split`** of the **full** dataset and exports that model (better use of all data for deployment). Use **`--no_final_retrain`** to export weights from the **best fold** instead (faster, no extra fit). Each class should have at least **`k_folds`** images so every fold’s training set still contains all classes.
+   **K-fold cross-validation (`--k_folds` > 1):** A **test** set of size **`--test_fraction`** is held out first. **Stratified k-fold** runs on the remaining **train+val pool**. The **final** fit (unless **`--no_final_retrain`**) trains on that pool with a **monitor validation** split proportional to **`validation_fraction / (train_fraction + validation_fraction)`**. Each class should have at least **`k_folds`** images in the pool so every fold’s training set still contains all classes.
 
-5. **Download** `plant_classifier.tflite` and your label file back to your laptop for the app or for local `infer_plant_tflite.py` tests.
+5. **Download** `plant_classifier_deep_learning.tflite` (or your chosen **`--out_tflite`**) and your label file back to your laptop for the app or for local `infer_plant_tflite.py` tests.
 
 **Note:** Final **TFLite conversion** is usually quick; **training** is what benefits most from the GPU. **K-fold multiplies training time** roughly by **k folds + 1** (final), unless you pass **`--no_final_retrain`**.
 
@@ -106,7 +110,21 @@ You do **not** need to install NVIDIA drivers or CUDA on your own computer for t
 
 **Optional — local NVIDIA GPU:** If you train on your own hardware instead, install matching drivers and follow TensorFlow’s pip guide: [https://www.tensorflow.org/install/pip](https://www.tensorflow.org/install/pip).
 
-## 6. Converting PlantNet species IDs to scientific names
+## 6. PlantNet-300K
+
+### 6.1 Flatten to folder-per-class (`flatten_plantnet.py`)
+
+The released tree is **`images/train/<species_id>/`**, **`images/val/<species_id>/`**, **`images/test/<species_id>/`**. The training scripts here expect **`images/<species_id>/`** (one subfolder per class). If **`--data_dir`** points at the **`images`** root, the top-level folders **`train`**, **`val`**, and **`test`** are treated as class names — merge splits first.
+
+```bash
+python flatten_plantnet.py --source /path/to/plantnet_300K/images --out /path/to/plantnet_flat
+```
+
+For faster iteration, use **`--max-species N`** with **`--seed`**, or **`--species-list ids.txt`** (one species id per line). **`--dry-run`** prints counts only. By default, files are **symlinked** into **`--out`**; use **`--copy`** if symlink creation fails. A manifest is written to **`flatten_plantnet_manifest.json`** under **`--out`**.
+
+Use the same **`--data_dir`** (the flattened tree), **`--seed`**, and split fractions for **`train_export_tflite.py`** and **`train_hog_svm.py`** so CNN and classical runs are comparable.
+
+### 6.2 Converting species IDs to scientific names
 
 Training with folders named after **numeric PlantNet species IDs** produces `plant_labels_export.txt` with one ID per line. For readable names in the app or in `infer_plant_tflite.py`, map those IDs to **scientific names** with `map_plantnet_ids_to_names.py`.
 
@@ -131,7 +149,7 @@ Training with folders named after **numeric PlantNet species IDs** produces `pla
 ## 7. Example: test the model in Python
 
 ```bash
-python infer_plant_tflite.py --model plant_classifier.tflite --labels plant_labels_scientific.txt --image ./Lactuca-virosa.jpg --top_k 10
+python infer_plant_tflite.py --model plant_classifier_deep_learning.tflite --labels plant_labels_scientific.txt --image ./Lactuca-virosa.jpg --top_k 10
 ```
 
 Example output:
@@ -141,7 +159,7 @@ Example output:
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
 Image: Lactuca-virosa.jpg
-Model: plant_classifier.tflite  |  labels: plant_labels_scientific.txt  |  top-10
+Model: plant_classifier_deep_learning.tflite  |  labels: plant_labels_scientific.txt  |  top-10
 
    1.  58.53%  Lactuca serriola L.
    2.  36.34%  Cirsium oleraceum (L.) Scop.
@@ -181,7 +199,66 @@ No color-correction flags — HOG runs on **grayscale** after resize (standard f
 python train_hog_svm.py --data_dir /path/to/your/data
 ```
 
-Artifacts: **`result/hog_svm_<timestamp>_UTC/`** (`summary.json`, confusion plot, `hog_svm_model.joblib`, `hog_svm_labels.txt`).
+Default HOG uses **CPU** (**scikit-image**). For GPU-accelerated HOG, see **[§8.2.1](#821-gpu-accelerated-hog-traditional-baseline)**.
+
+Optional **TensorFlow Lite** export of the **linear** HOG+SVM (same graph as sklearn: HOG → standardize → OvR linear SVM logits). RBF kernels are not supported for TFLite.
+
+```bash
+python train_hog_svm.py \
+  --data_dir /path/to/your/data \
+  --export_tflite plant_classifier_traditional.tflite
+```
+
+You can also re-export from a saved joblib with **`export_hog_svm_tflite.py`** (pass the same **`--img_size`** and HOG flags as training). The TFLite graph expects **float32 RGB in [0, 1]** at **`--img_size`**. If you trained with **`--gpu-hog`**, training HOG matches that graph; if you used **CPU skimage** HOG, preprocess to match that path or duplicate gray to RGB as described in **`hog_tf.py`**. Artifacts: **`result/hog_svm_<timestamp>_UTC/`** (`summary.json`, confusion plot, `hog_svm_model.joblib`, `hog_svm_labels.txt`).
+
+#### 8.2.1 GPU-accelerated HOG (traditional baseline)
+
+By default, **`train_hog_svm.py`** extracts HOG with **scikit-image** on **CPU**. That is the slowest step on large datasets (e.g. PlantNet-scale).
+
+**What uses the GPU:** With **`--gpu-hog`**, HOG is computed in **TensorFlow** (`hog_tf.py`), which typically places work on the **GPU** if you installed **`tensorflow[and-cuda]`** and `tf.config.list_physical_devices("GPU")` is non-empty (see [§5](#5-training-and-exporting-tflite-on-an-nvidia-gpu-nvidia-brev)).
+
+**What stays on CPU:** **`StandardScaler`** and **`LinearSVC` / `SVC.fit`** are still **scikit-learn** on CPU; that phase is usually much cheaper than HOG on millions of images.
+
+| Flag | Meaning |
+|------|---------|
+| **`--gpu-hog`** | Use TensorFlow for HOG (GPU when available). |
+| **`--no-gpu-hog`** | Use scikit-image HOG on CPU (default). |
+| **`--hog_batch_size N`** | Images per batch for TF HOG (default **64**); **lower** if you hit GPU OOM. |
+
+**Example (Brev / Linux GPU):**
+
+```bash
+pip install "tensorflow[and-cuda]>=2.14.0,<2.19.0"   # if not already (see §5)
+python train_hog_svm.py \
+  --data_dir /path/to/your/data \
+  --gpu-hog \
+  --hog_batch_size 64 \
+  --export_tflite plant_classifier_traditional.tflite
+```
+
+**Config file:** In **`model_hyperparameters.json`**, under **`traditional`**, set **`"use_gpu_hog": true`** and optional **`"hog_batch_size"`**, then run **`--config model_hyperparameters.json`**.
+
+**Logs:** The run prints whether TF sees a GPU. **`metrics_train_val_test.json`** includes **`hog_backend`** and **`use_gpu_hog`**.
+
+**Preprocessing note:** **`--gpu-hog`** follows the same pipeline as the exported **TFLite** model (resize → RGB [0,1] → BT.601 gray → HOG). The default **CPU** path uses skimage **gray → resize**, which can differ slightly—use one path consistently for experiments and deployment.
+
+**Quieter TensorFlow logs (optional):** `export TF_CPP_MIN_LOG_LEVEL=2`
+
+**GPU OOM on `cudaSetDevice` / import:** TensorFlow is configured for **memory growth** at the start of `train_hog_svm.py` when using **`--gpu-hog`** or **`--export_tflite`**, so it should not grab all VRAM. If you still see **out of memory** when the GPU is selected, another process is usually using the card—run **`nvidia-smi`**, stop Jupyter/other training jobs, or use a machine with a free GPU.
+
+**Faster / cheaper classical runs (subset of images):** Full-dataset HOG on hundreds of thousands of images can take many GPU-hours. For coursework or iteration, stratified subsampling reduces HOG time and cost; report the settings from **`hog_svm_subsample.json`** (also embedded under **`subsampling`** in **`metrics_train_val_test.json`**). Example:
+
+```bash
+python train_hog_svm.py \
+  --data_dir /path/to/your/data \
+  --gpu-hog --hog_batch_size 256 \
+  --train_sample_fraction 0.05 \
+  --max_train_images 20000 \
+  --max_val_images 5000 --max_test_images 5000 \
+  --export_tflite plant_classifier_traditional.tflite
+```
+
+Optional speed without subsampling: larger **`--hog_pixels_per_cell`** (e.g. 32) and **`--hog_batch_size`** (e.g. 256) if memory allows.
 
 ### 8.3 Deep learning (CNN → TFLite)
 
@@ -191,7 +268,7 @@ Artifacts: **`result/hog_svm_<timestamp>_UTC/`** (`summary.json`, confusion plot
 python train_export_tflite.py \
   --data_dir /path/to/your/data \
   --color_correct none \
-  --out_tflite plant_classifier.tflite \
+  --out_tflite plant_classifier_deep_learning.tflite \
   --out_labels plant_labels_export.txt
 ```
 
@@ -201,7 +278,7 @@ python train_export_tflite.py \
 python train_export_tflite.py \
   --data_dir /path/to/your/data \
   --color_correct gray_world \
-  --out_tflite plant_classifier.tflite \
+  --out_tflite plant_classifier_deep_learning.tflite \
   --out_labels plant_labels_export.txt
 ```
 
@@ -209,17 +286,17 @@ python train_export_tflite.py \
 python train_export_tflite.py \
   --data_dir /path/to/your/data \
   --color_correct max_rgb \
-  --out_tflite plant_classifier.tflite \
+  --out_tflite plant_classifier_deep_learning.tflite \
   --out_labels plant_labels_export.txt
 ```
 
-Artifacts: **`plant_classifier.tflite`**, **`plant_labels_export.txt`**, and under **`result/<timestamp>_UTC/`** (unless `--no_metric_logs`): metrics CSV, plots, `metrics_summary.json` in **`single_split/`** (or **`fold_*`** / **`final_retrain/`** if you used **`--k_folds`**).
+Artifacts: **`plant_classifier_deep_learning.tflite`** (unless you override **`--out_tflite`**), **`plant_labels_export.txt`**, and under **`result/<timestamp>_UTC/`** (unless `--no_metric_logs`): metrics CSV, plots, `metrics_summary.json` in **`single_split/`** (or **`fold_*`** / **`final_retrain/`** if you used **`--k_folds`**).
 
 ### 8.4 Test the TFLite model (match `--color_correct` to training)
 
 ```bash
 python infer_plant_tflite.py \
-  --model plant_classifier.tflite \
+  --model plant_classifier_deep_learning.tflite \
   --labels plant_labels_scientific.txt \
   --image ./your_photo.jpg \
   --top_k 10 \
@@ -228,9 +305,41 @@ python infer_plant_tflite.py \
 
 Use **`--color_correct none`** if you trained with **`none`**; use **`gray_world`** or **`max_rgb`** if you trained with that setting.
 
+Example with **`max_rgb`**:
+
+```bash
+python infer_plant_tflite.py \
+  --model plant_classifier_deep_learning.tflite \
+  --labels plant_labels_scientific.txt \
+  --image ./Lactuca-virosa.jpg \
+  --top_k 10 \
+  --color_correct max_rgb
+```
+
+Example output:
+
+```text
+2026-04-28 11:26:33.092807: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Image: Lactuca-virosa.jpg
+Model: plant_classifier_deep_learning.tflite  |  labels: plant_labels_scientific.txt  |  top-10
+
+   1.  58.13%  Lactuca serriola L.
+   2.  21.60%  Lactuca virosa L.
+   3.  14.29%  Lactuca virosa Habl.
+   4.   4.76%  Helminthotheca echioides (L.) Holub
+   5.   0.23%  Cirsium oleraceum (L.) Scop.
+   6.   0.20%  Angelica sylvestris L.
+   7.   0.14%  Cirsium monspessulanum (L.) Hill
+   8.   0.13%  Cirsium heterophyllum (L.) Hill
+   9.   0.09%  Calendula officinalis L.
+  10.   0.07%  Calendula arvensis L.
+```
+
 ### 8.5 Optional: PlantNet ID → scientific names
 
-Only if your **folder names / labels** are numeric species IDs and you have **`plantnet300K_species_id_2_name.json`** — see [§6](#6-converting-plantnet-species-ids-to-scientific-names).
+Only if your **folder names / labels** are numeric species IDs and you have **`plantnet300K_species_id_2_name.json`** — see [§6.2](#62-converting-species-ids-to-scientific-names).
 
 ### 8.6 Compare classical vs deep learning
 
@@ -238,7 +347,18 @@ Only if your **folder names / labels** are numeric species IDs and you have **`p
 |------|-----------|----------------|
 | Train | `train_hog_svm.py` | `train_export_tflite.py` (+ optional `--color_correct`, `--k_folds`) |
 | Main metrics | `result/hog_svm_*/summary.json` | `result/<run>/single_split/metrics_summary.json` (or `final_retrain/`) |
-| Deployed model | `hog_svm_model.joblib` (Python/sklearn) | `plant_classifier.tflite` (mobile) |
+| Deployed model | `hog_svm_model.joblib` (Python/sklearn); optional **`plant_classifier_traditional.tflite`** | **`plant_classifier_deep_learning.tflite`** (mobile CNN) |
 
-**Fair comparison:** use the same **`--data_dir`**, similar **`--validation_split`** / **`--seed`**, and report accuracy / F1 from each **`summary.json`**. CNN adds color constancy as an optional experiment; HOG stays grayscale-only by design.
+**Fair comparison:** use the same **`--data_dir`**, **`--config model_hyperparameters.json`** (or identical **`--seed`** and split fractions), and report metrics from **`metrics_train_val_test.json`** (headline **test** metrics for the held-out set). CNN adds color constancy as an optional experiment; HOG stays grayscale-only by design.
+
+### 8.7 Hyperparameter file (`model_hyperparameters.json`)
+
+Tune **`split`**, **`traditional`** (HOG + SVM), and **`deep_learning`** (CNN) in one place. Run:
+
+```bash
+python train_hog_svm.py --config model_hyperparameters.json --data_dir /path/to/your/data
+python train_export_tflite.py --config model_hyperparameters.json --data_dir /path/to/your/data
+```
+
+Each run writes **`hyperparameters_snapshot.json`** (file + effective CLI values) next to the metrics logs for your report.
 

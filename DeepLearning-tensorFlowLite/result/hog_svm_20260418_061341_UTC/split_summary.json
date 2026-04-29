@@ -1,0 +1,35 @@
+{
+  "seed": 42,
+  "fractions": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "counts": {
+    "train": 214302,
+    "validation": 45922,
+    "test": 45922
+  },
+  "per_class_counts": {
+    "train": [
+      21778,
+      170742,
+      21782
+    ],
+    "validation": [
+      4667,
+      36587,
+      4668
+    ],
+    "test": [
+      4667,
+      36587,
+      4668
+    ],
+    "class_names": [
+      "test",
+      "train",
+      "val"
+    ]
+  }
+}
