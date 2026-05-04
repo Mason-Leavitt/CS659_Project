@@ -1,0 +1,6 @@
+-r ../DeepLearning-tensorFlowLite/requirements-tflite.txt
+streamlit
+langchain
+langchain-openai
+openai
+python-dotenv

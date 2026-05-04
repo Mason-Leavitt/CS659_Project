@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "dataset_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample",
+  "resolved_image_root": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test",
+  "split": "test",
+  "num_images": 50,
+  "num_classes": 25,
+  "manifest_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\point_011_max_images_per_class_2\\point_011_max_images_per_class_2_manifest.csv",
+  "preview": [
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1358099\\7654c4301d339c75ef92ec38bd30aa246878ee17.jpg",
+      "label": "1358099",
+      "display_label": "Sedum brevifolium DC.",
+      "split": "test",
+      "class_dir": "1358099"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1358760\\58c6653e7baff9c45417b6b012bcc0fb440b6596.jpg",
+      "label": "1358760",
+      "display_label": "Lavandula multifida L.",
+      "split": "test",
+      "class_dir": "1358760"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1361824\\93e587965bd02d7fcc6225724de813abb62b5d29.jpg",
+      "label": "1361824",
+      "display_label": "Lavandula angustifolia Mill.",
+      "split": "test",
+      "class_dir": "1361824"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1393933\\0d1cf78885245ab4b16c0ae10cbcf5ab3c83f757.jpg",
+      "label": "1393933",
+      "display_label": "Narthecium ossifragum (L.) Huds.",
+      "split": "test",
+      "class_dir": "1393933"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1420795\\bf1e8de41bef3a69600958ba94a5c0cc00307c32.jpg",
+      "label": "1420795",
+      "display_label": "Alocasia sanderiana W.Bull",
+      "split": "test",
+      "class_dir": "1420795"
+    }
+  ],
+  "sampling_mode": "balanced",
+  "seed": 42,
+  "max_images_per_class": 2,
+  "class_distribution": {
+    "1358099": 2,
+    "1358760": 2,
+    "1359197": 2,
+    "1359620": 2,
+    "1360147": 2,
+    "1360550": 2,
+    "1360998": 2,
+    "1361824": 2,
+    "1363490": 2,
+    "1375966": 2,
+    "1391868": 2,
+    "1393933": 2,
+    "1396156": 2,
+    "1396161": 2,
+    "1397305": 2,
+    "1397351": 2,
+    "1412697": 2,
+    "1412699": 2,
+    "1412889": 2,
+    "1413002": 2,
+    "1419115": 2,
+    "1420795": 2,
+    "1529081": 2,
+    "1529107": 2,
+    "1667445": 2
+  },
+  "warning": null,
+  "error": null
+}

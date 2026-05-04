@@ -1,0 +1,73 @@
+{
+  "success": true,
+  "dataset_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample",
+  "resolved_image_root": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test",
+  "split": "test",
+  "num_images": 100,
+  "num_classes": 20,
+  "manifest_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_044414_UTC\\point_006_sampling_mode_sorted\\point_006_sampling_mode_sorted_manifest.csv",
+  "preview": [
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1358099\\0f58f118b1a1795c1f1a0e82f3debf0cea11b14a.jpg",
+      "label": "1358099",
+      "display_label": "Sedum brevifolium DC.",
+      "split": "test",
+      "class_dir": "1358099"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1358099\\564eb2bba72ed7a48a544a6ee4c8735e698cce26.jpg",
+      "label": "1358099",
+      "display_label": "Sedum brevifolium DC.",
+      "split": "test",
+      "class_dir": "1358099"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1358099\\63d26daca057dfde1c341b0f04026dad4abaa0f9.jpg",
+      "label": "1358099",
+      "display_label": "Sedum brevifolium DC.",
+      "split": "test",
+      "class_dir": "1358099"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1358099\\7654c4301d339c75ef92ec38bd30aa246878ee17.jpg",
+      "label": "1358099",
+      "display_label": "Sedum brevifolium DC.",
+      "split": "test",
+      "class_dir": "1358099"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1358099\\76b84c98641f3804d870ab108c79c0275b4d7648.jpg",
+      "label": "1358099",
+      "display_label": "Sedum brevifolium DC.",
+      "split": "test",
+      "class_dir": "1358099"
+    }
+  ],
+  "sampling_mode": "sorted",
+  "seed": 50,
+  "max_images_per_class": 5,
+  "class_distribution": {
+    "1358099": 5,
+    "1358760": 5,
+    "1359197": 5,
+    "1359620": 5,
+    "1360147": 5,
+    "1360550": 5,
+    "1360998": 5,
+    "1361824": 5,
+    "1363490": 5,
+    "1375966": 5,
+    "1391868": 5,
+    "1393933": 5,
+    "1396156": 5,
+    "1396161": 5,
+    "1397305": 5,
+    "1397351": 5,
+    "1412697": 5,
+    "1412699": 5,
+    "1412889": 5,
+    "1413002": 5
+  },
+  "warning": null,
+  "error": null
+}

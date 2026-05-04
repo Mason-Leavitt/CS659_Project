@@ -1,0 +1,101 @@
+image_path,label,display_label,split,class_dir
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1396156\081d7f75dd40d17f8029493305f7755f6d3080cd.jpg,1396156,Sedum kamtschaticum Fisch. & C.A.Mey.,test,1396156
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360550\205a53c1577215f503481676822c923b36ead401.jpg,1360550,Hyoscyamus albus L.,test,1360550
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1396161\efc24a6d0ff0b8208836552eee4abe85139fe06c.jpg,1396161,Sedum ochroleucum Chaix,test,1396161
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1397351\fa357f8ed227acc7293f8acf53161e178712c650.jpg,1397351,Cirsium acaulon (L.) Scop.,test,1397351
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1667445\a7463ce2df026f1928bc2268761c06b9e0f8089c.jpg,1667445,Fragaria × ananassa (Duchesne ex Weston) Duchesne ex Rozier,test,1667445
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1361824\e5947cfabcf120ee7d5d3837ae956360be49f878.jpg,1361824,Lavandula angustifolia Mill.,test,1361824
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1363490\a45ef4b3db5faa3ad26574165c7f2eae504e9c36.jpg,1363490,Phalaris arundinacea L.,test,1363490
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1529107\307c63b1d138fc411fc93fa8e13c7c74af55c5eb.jpg,1529107,Sedum burrito Moran,test,1529107
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1359197\fca5ce033fb0123441257fed563a50d592313788.jpg,1359197,Galega officinalis L.,test,1359197
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360998\c5fdd8f2527fd76ed052338261286c87a42d0604.jpg,1360998,Anthericum liliago L.,test,1360998
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1397305\d11dcd70f7585f195bd52f9cf198f1ecd6b0658a.jpg,1397305,Alcea biennis Winterl,test,1397305
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412697\861253d1778c1a6afc358c47f2266a67492bf518.jpg,1412697,Mertensia maritima (L.) Gray,test,1412697
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1529081\8ded49dc7a93197beb527f26b3f460afaee18a35.jpg,1529081,Sedum adolphii Raym.-Hamet,test,1529081
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1419115\dbbea6eda5d5bd0fbcc8f2f5937c9ff5b74bcd95.jpg,1419115,Pelargonium x hortorum L.H. Bailey,test,1419115
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1375966\00370a4b947ff8a232500143272f8a486b673203.jpg,1375966,Phyllanthus amarus Schumach. & Thonn.,test,1375966
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1393933\ee56a47222524114edf7aa48f40a681dd0d63aba.jpg,1393933,Narthecium ossifragum (L.) Huds.,test,1393933
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1420795\a852f219cf84d7e49495bc33b04bb319234e8f03.jpg,1420795,Alocasia sanderiana W.Bull,test,1420795
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412699\b35b5970a7f885a168071785e98de3ddae8f9654.jpg,1412699,Mertensia virginica (L.) Pers. ex Link,test,1412699
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360147\49fcb7e43ab727f9ef9412a16adc0ff3669ec8a9.jpg,1360147,Adonis aestivalis L.,test,1360147
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412889\0c48875bda62df983834dd35532f4d7de13614d5.jpg,1412889,Osmunda claytoniana L.,test,1412889
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1358099\aa741b79bd2daa80454ff160ade36a234f7961b0.jpg,1358099,Sedum brevifolium DC.,test,1358099
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1359620\9526f40b09a2fa6a9247ea5daef8b18e3542b7ca.jpg,1359620,Alcea rosea L.,test,1359620
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1358760\58c6653e7baff9c45417b6b012bcc0fb440b6596.jpg,1358760,Lavandula multifida L.,test,1358760
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1413002\c9b781599c2db0b6ef1a2a2708d58a55dc158e2c.jpg,1413002,Aralia nudicaulis L.,test,1413002
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1391868\432e42e425fc2793ddf5eef709fe91cd5c3f9102.jpg,1391868,Empetrum nigrum L.,test,1391868
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1396156\13f487fdeea3401a25988a31724b82d585f7f729.jpg,1396156,Sedum kamtschaticum Fisch. & C.A.Mey.,test,1396156
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360550\be236e8c1e093c8a2d6017cd675d86ea6f0ae713.jpg,1360550,Hyoscyamus albus L.,test,1360550
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1396161\ca6a49595e3995a9116ad03d3aea664b1733ee5a.jpg,1396161,Sedum ochroleucum Chaix,test,1396161
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1397351\eb897f67946e5b935a04c0efe06450473a12c7b4.jpg,1397351,Cirsium acaulon (L.) Scop.,test,1397351
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1667445\63fe2a32b5d126ac6f2d04506eb8183272d478d1.jpg,1667445,Fragaria × ananassa (Duchesne ex Weston) Duchesne ex Rozier,test,1667445
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1361824\7ac385ce4c7fe6447cfd47ddb9e07f4b858509ae.jpg,1361824,Lavandula angustifolia Mill.,test,1361824
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1363490\48f71adaf5174af7daea5313f9a60bdb02ba0e87.jpg,1363490,Phalaris arundinacea L.,test,1363490
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1529107\151d7a1e962f5d9bf99efa1c0ba71575838bfaaf.jpg,1529107,Sedum burrito Moran,test,1529107
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1359197\cce5c33ddf43c89b845777d0c2029530feb66f5d.jpg,1359197,Galega officinalis L.,test,1359197
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360998\81c67a047fa43e551527d945f57dda527b356cb2.jpg,1360998,Anthericum liliago L.,test,1360998
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1397305\82865ac02e9e37b2554655e75f45c2fb9c4955d7.jpg,1397305,Alcea biennis Winterl,test,1397305
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412697\c15bd808cdcc928df24efca05abbb8bc594e8067.jpg,1412697,Mertensia maritima (L.) Gray,test,1412697
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1529081\5e5d58c0b3b451c1ab53fb5be44e98c3db126241.jpg,1529081,Sedum adolphii Raym.-Hamet,test,1529081
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1419115\912f4ff4a7a4e0d47bd7e0cc0fb4bde1cd1be448.jpg,1419115,Pelargonium x hortorum L.H. Bailey,test,1419115
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1375966\6971bddaf6829138f007a43fecf4909929460cfe.jpg,1375966,Phyllanthus amarus Schumach. & Thonn.,test,1375966
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1393933\3b8f9af5609d40ca7cd1fb1671d202cd2fac0304.jpg,1393933,Narthecium ossifragum (L.) Huds.,test,1393933
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1420795\fb2a0513f5b5450b7f0524f161ba25f4fb08fb6e.jpg,1420795,Alocasia sanderiana W.Bull,test,1420795
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412699\91901c44deb48014662adbeca591f58e57e13b0f.jpg,1412699,Mertensia virginica (L.) Pers. ex Link,test,1412699
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360147\16de8f6f938f8b62e96bf2fafcd862acb9fb2662.jpg,1360147,Adonis aestivalis L.,test,1360147
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412889\efb7f26a5544d595945b326dd5ed40e18f1525ba.jpg,1412889,Osmunda claytoniana L.,test,1412889
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1358099\d332a01c7b4d8342ea922d036e71beff2a1d0196.jpg,1358099,Sedum brevifolium DC.,test,1358099
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1359620\e373c4617f19faad17b3200160e828428397a4a0.jpg,1359620,Alcea rosea L.,test,1359620
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1358760\3b88c6486bbbcb0bb0f2ad49fa02d55f726dfcdd.jpg,1358760,Lavandula multifida L.,test,1358760
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1413002\2ae44401a0e9c89f0fdc353a77b0d8e9d0e18ede.jpg,1413002,Aralia nudicaulis L.,test,1413002
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1391868\2ccfbf289a55d2161caa1872ecaebbeb8c9caf7a.jpg,1391868,Empetrum nigrum L.,test,1391868
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1396156\cb52abae03717bac8c48440c389d01dfbbcc5543.jpg,1396156,Sedum kamtschaticum Fisch. & C.A.Mey.,test,1396156
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360550\43e7c4078b5e640f881bb4978135a0e3a25918e8.jpg,1360550,Hyoscyamus albus L.,test,1360550
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1396161\91991975febd7cf0e5e6fe068790f46f6ea2f5ea.jpg,1396161,Sedum ochroleucum Chaix,test,1396161
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1397351\87c59f2b81463d2e233e7a6393c153c1e1b1043c.jpg,1397351,Cirsium acaulon (L.) Scop.,test,1397351
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1667445\b05e8ba3147a86e020d003bea1abdeab4c51fce8.jpg,1667445,Fragaria × ananassa (Duchesne ex Weston) Duchesne ex Rozier,test,1667445
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1361824\93e587965bd02d7fcc6225724de813abb62b5d29.jpg,1361824,Lavandula angustifolia Mill.,test,1361824
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1363490\b75d0a04c36feb0dedea144deb747e1edead310e.jpg,1363490,Phalaris arundinacea L.,test,1363490
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1529107\1c5a4dbae1476f92939a90e7f12e0fda9543fb82.jpg,1529107,Sedum burrito Moran,test,1529107
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1359197\a9be7cbc2e1be700ed0d3b2a9c008c97aa309f8e.jpg,1359197,Galega officinalis L.,test,1359197
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360998\0b83a31d1c0a0d24136d4ec16354c662c73ed8c7.jpg,1360998,Anthericum liliago L.,test,1360998
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1397305\31097c4da53edcdef9614671fae478796cdfaa2f.jpg,1397305,Alcea biennis Winterl,test,1397305
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412697\876c7da5c5d38a511c2c77bd75830c96e4f54336.jpg,1412697,Mertensia maritima (L.) Gray,test,1412697
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1529081\c9fe6f3c230bd473feff2fe166bef7c22c16ec8c.jpg,1529081,Sedum adolphii Raym.-Hamet,test,1529081
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1419115\cadf5d6d2e947a83478db247a3eb2bfbdb7f5f87.jpg,1419115,Pelargonium x hortorum L.H. Bailey,test,1419115
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1375966\94ad76fe83d64b0dc35efd4a72f14db738b177be.jpg,1375966,Phyllanthus amarus Schumach. & Thonn.,test,1375966
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1393933\ff5cf019e844210d77604d093fb94781339d1ff0.jpg,1393933,Narthecium ossifragum (L.) Huds.,test,1393933
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1420795\bf1e8de41bef3a69600958ba94a5c0cc00307c32.jpg,1420795,Alocasia sanderiana W.Bull,test,1420795
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412699\cd07e8b47a9c5c8a9b13413d5f4eb24b583f3520.jpg,1412699,Mertensia virginica (L.) Pers. ex Link,test,1412699
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360147\473199b321ed4515905a51145f4db0d3852fbe79.jpg,1360147,Adonis aestivalis L.,test,1360147
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412889\e000b959b491873bc97dd175abed281ffe164895.jpg,1412889,Osmunda claytoniana L.,test,1412889
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1358099\63d26daca057dfde1c341b0f04026dad4abaa0f9.jpg,1358099,Sedum brevifolium DC.,test,1358099
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1359620\8d200a8ee1fb181221501dd1ffaeef8eef65c92e.jpg,1359620,Alcea rosea L.,test,1359620
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1358760\dac69d5edfa04e113a9bcd168faca2cb2cfb5bc8.jpg,1358760,Lavandula multifida L.,test,1358760
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1413002\04244557ac2251d262333c367094aaec1d69d06b.jpg,1413002,Aralia nudicaulis L.,test,1413002
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1391868\9935ab8a0b633dc2e054a4e10cb7621e5e8d3cf9.jpg,1391868,Empetrum nigrum L.,test,1391868
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1396156\45fa4d0ff4f495d880584bf40898ebe885d20d37.jpg,1396156,Sedum kamtschaticum Fisch. & C.A.Mey.,test,1396156
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360550\c3b97bf67337ae54f0ffd060f9cb97fe42267314.jpg,1360550,Hyoscyamus albus L.,test,1360550
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1396161\607e8d6a7d9fbfc2e8cab86ad0a2c99e1e9dc867.jpg,1396161,Sedum ochroleucum Chaix,test,1396161
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1397351\3f75ff0dbb8a3eb93566ff3f2aaaf3fa5a4eee63.jpg,1397351,Cirsium acaulon (L.) Scop.,test,1397351
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1667445\8ea2aca73289d79573c8eb32596450261fc7091b.jpg,1667445,Fragaria × ananassa (Duchesne ex Weston) Duchesne ex Rozier,test,1667445
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1361824\ab80568ed33e82611c419c104d32469084a33a05.jpg,1361824,Lavandula angustifolia Mill.,test,1361824
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1363490\b70d6e6f3f3032f721dab4aa287ee50b1368ef21.jpg,1363490,Phalaris arundinacea L.,test,1363490
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1529107\6a4d66ef180cbd221086d954330d3da76fc92ed0.jpg,1529107,Sedum burrito Moran,test,1529107
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1359197\da36c668cda3c488bf3adf5710353b7cff8302b9.jpg,1359197,Galega officinalis L.,test,1359197
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360998\4739296fc82853b7a246faf302ac29f3c8bd90ef.jpg,1360998,Anthericum liliago L.,test,1360998
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1397305\7ce6795df9059dadcb206b1b0fd7f4a08ff1e0b2.jpg,1397305,Alcea biennis Winterl,test,1397305
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412697\8f7bd562bcf813d4f819aa9b9b2f88619042fa82.jpg,1412697,Mertensia maritima (L.) Gray,test,1412697
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1529081\3ddf722fe858ff506503af40ed097ef4a64a1b60.jpg,1529081,Sedum adolphii Raym.-Hamet,test,1529081
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1419115\28c79594be2c072996a14cde63a5e7a9f5a36eaa.jpg,1419115,Pelargonium x hortorum L.H. Bailey,test,1419115
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1375966\1a66dd4dc21577c643a440412290595c5163de73.jpg,1375966,Phyllanthus amarus Schumach. & Thonn.,test,1375966
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1393933\ec2fef417e64901863ca6e36ea0094dd19bab28b.jpg,1393933,Narthecium ossifragum (L.) Huds.,test,1393933
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1420795\6d143714b860575fd53f9fab1d7f2de2fddadf7b.jpg,1420795,Alocasia sanderiana W.Bull,test,1420795
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412699\57b6b38a3056f1c02e25e27ff47521dab6064d92.jpg,1412699,Mertensia virginica (L.) Pers. ex Link,test,1412699
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1360147\616df43a6cf0d7d0770da4f05c22fae28645d5c1.jpg,1360147,Adonis aestivalis L.,test,1360147
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1412889\7292f1491c834014218154ac9b3b725f09e96ab3.jpg,1412889,Osmunda claytoniana L.,test,1412889
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1358099\76b84c98641f3804d870ab108c79c0275b4d7648.jpg,1358099,Sedum brevifolium DC.,test,1358099
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1359620\5000b55da65af30c9f0b4426d063c5b8ccb51bf2.jpg,1359620,Alcea rosea L.,test,1359620
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1358760\1fcd8ca064d97ef1f0766e7b3e5bc6376787e167.jpg,1358760,Lavandula multifida L.,test,1358760
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1413002\3ad4b30dd299771c8ff07ea32fdcde968edb1d46.jpg,1413002,Aralia nudicaulis L.,test,1413002
+D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\dataset_sample\images\test\1391868\4f9dc95a1a9ded613c8d911a902f6d6ea3c0f723.jpg,1391868,Empetrum nigrum L.,test,1391868

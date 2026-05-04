@@ -26,6 +26,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+from hog_svm_utils import prepare_hog_features
 from sklearn.metrics import (
     accuracy_score,
     classification_report,
@@ -38,10 +39,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import LinearSVC, SVC
-from skimage.color import rgb2gray
-from skimage.feature import hog
-from skimage.io import imread
-from skimage.transform import resize
 
 _IMG_EXTS = frozenset({".jpg", ".jpeg", ".png", ".bmp", ".gif", ".webp"})
 
@@ -65,40 +62,6 @@ def _collect_paths_and_labels(data_dir: Path, class_names: list[str]) -> tuple[l
     return paths, labels
 
 
-def _load_gray_resized(path: Path, img_size: int) -> np.ndarray:
-    img = imread(str(path))
-    if img.ndim == 2:
-        g = img.astype(np.float64)
-        if g.max() > 1.0:
-            g /= 255.0
-        return resize(g, (img_size, img_size), anti_aliasing=True)
-    if img.shape[2] == 4:
-        img = img[..., :3]
-    rgb = img.astype(np.float64)
-    if rgb.max() > 1.0:
-        rgb /= 255.0
-    g = rgb2gray(rgb)
-    return resize(g, (img_size, img_size), anti_aliasing=True)
-
-
-def _hog_feature(
-    gray: np.ndarray,
-    *,
-    orientations: int,
-    pixels_per_cell: tuple[int, int],
-    cells_per_block: tuple[int, int],
-) -> np.ndarray:
-    return hog(
-        gray,
-        orientations=orientations,
-        pixels_per_cell=pixels_per_cell,
-        cells_per_block=cells_per_block,
-        block_norm="L2-Hys",
-        visualize=False,
-        feature_vector=True,
-    )
-
-
 def _extract_matrix(
     paths: list[str],
     *,
@@ -111,8 +74,16 @@ def _extract_matrix(
     n = len(paths)
     t0 = time.perf_counter()
     for i, p in enumerate(paths):
-        gray = _load_gray_resized(Path(p), img_size)
-        feats.append(_hog_feature(gray, orientations=orientations, pixels_per_cell=pixels_per_cell, cells_per_block=cells_per_block))
+        feats.append(
+            prepare_hog_features(
+                p,
+                img_size=img_size,
+                orientations=orientations,
+                pixels_per_cell=pixels_per_cell[0],
+                cells_per_block=cells_per_block[0],
+                block_norm="L2-Hys",
+            )
+        )
         if (i + 1) % max(1, n // 10) == 0 or i + 1 == n:
             _log(f"  HOG features: {i + 1}/{n} images ({_fmt_duration(time.perf_counter() - t0)})")
     return np.stack(feats, axis=0)

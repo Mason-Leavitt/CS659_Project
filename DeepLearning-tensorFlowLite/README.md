@@ -242,3 +242,19 @@ Only if your **folder names / labels** are numeric species IDs and you have **`p
 
 **Fair comparison:** use the same **`--data_dir`**, similar **`--validation_split`** / **`--seed`**, and report accuracy / F1 from each **`summary.json`**. CNN adds color constancy as an optional experiment; HOG stays grayscale-only by design.
 
+## 9. Integration with Conversational Agent
+
+A new **`agent/`** directory now exists at the repository root for the conversational application layer.
+
+That agent layer uses the reusable inference and path-handling pieces in this directory, especially:
+
+- **`infer_plant_tflite.py`**
+- **`infer_hog_svm.py`**
+- **`app_config.py`**
+
+These scripts were refactored to expose reusable inference functions for the app and agent layers while keeping their existing CLI behavior unchanged.
+
+Checked-in HOG+SVM `joblib` artifacts under `result/` are version-sensitive to `scikit-learn`.
+Install the pinned version from `requirements-tflite.txt` when using those saved artifacts, or
+retrain/export the HOG model in your current environment if versions differ.
+

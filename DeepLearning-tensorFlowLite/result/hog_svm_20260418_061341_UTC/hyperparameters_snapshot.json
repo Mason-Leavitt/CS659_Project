@@ -1,0 +1,31 @@
+{
+  "runtime_cli_overrides": {
+    "data_dir": "/home/ubuntu/plantnet_300K/images",
+    "img_size": 128,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15,
+    "seed": 42,
+    "kernel": "linear",
+    "linear_head": "tf",
+    "tf_linear_epochs": 100,
+    "tf_linear_batch_size": 4096,
+    "tf_linear_learning_rate": 0.001,
+    "C": 1.0,
+    "hog_preset": "coarse",
+    "hog_orientations": 6,
+    "hog_pixels_per_cell": 32,
+    "hog_cells_per_block": 2,
+    "out_model": "hog_svm_model.joblib",
+    "out_labels": "hog_svm_labels.txt",
+    "result_dir": null,
+    "export_tflite": "plant_classifier_traditional.tflite",
+    "save_split_lists": false,
+    "use_gpu_hog": true,
+    "hog_batch_size": 256,
+    "train_sample_fraction": 0.05,
+    "max_train_images": 20000,
+    "max_val_images": 5000,
+    "max_test_images": 5000
+  }
+}

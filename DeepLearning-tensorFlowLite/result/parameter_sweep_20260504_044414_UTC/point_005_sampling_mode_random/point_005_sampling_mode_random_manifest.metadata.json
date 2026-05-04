@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "dataset_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample",
+  "resolved_image_root": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test",
+  "split": "test",
+  "num_images": 100,
+  "num_classes": 25,
+  "manifest_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_044414_UTC\\point_005_sampling_mode_random\\point_005_sampling_mode_random_manifest.csv",
+  "preview": [
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1375966\\04cf832aad5a53a401ce02f9301f3bb330642432.jpg",
+      "label": "1375966",
+      "display_label": "Phyllanthus amarus Schumach. & Thonn.",
+      "split": "test",
+      "class_dir": "1375966"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1358760\\1fcd8ca064d97ef1f0766e7b3e5bc6376787e167.jpg",
+      "label": "1358760",
+      "display_label": "Lavandula multifida L.",
+      "split": "test",
+      "class_dir": "1358760"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1396161\\91991975febd7cf0e5e6fe068790f46f6ea2f5ea.jpg",
+      "label": "1396161",
+      "display_label": "Sedum ochroleucum Chaix",
+      "split": "test",
+      "class_dir": "1396161"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1360550\\c2e2d1637b7912437ceb76021e80810a661b86db.jpg",
+      "label": "1360550",
+      "display_label": "Hyoscyamus albus L.",
+      "split": "test",
+      "class_dir": "1360550"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1393933\\ee56a47222524114edf7aa48f40a681dd0d63aba.jpg",
+      "label": "1393933",
+      "display_label": "Narthecium ossifragum (L.) Huds.",
+      "split": "test",
+      "class_dir": "1393933"
+    }
+  ],
+  "sampling_mode": "random",
+  "seed": 50,
+  "max_images_per_class": 5,
+  "class_distribution": {
+    "1358099": 4,
+    "1358760": 4,
+    "1359197": 3,
+    "1359620": 5,
+    "1360147": 3,
+    "1360550": 4,
+    "1360998": 3,
+    "1361824": 3,
+    "1363490": 5,
+    "1375966": 4,
+    "1391868": 4,
+    "1393933": 4,
+    "1396156": 3,
+    "1396161": 5,
+    "1397305": 4,
+    "1397351": 5,
+    "1412697": 5,
+    "1412699": 3,
+    "1412889": 3,
+    "1413002": 4,
+    "1419115": 4,
+    "1420795": 5,
+    "1529081": 5,
+    "1529107": 4,
+    "1667445": 4
+  },
+  "warning": null,
+  "error": null
+}

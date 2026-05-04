@@ -1,0 +1,114 @@
+{
+  "comparison_rows": [
+    {
+      "run_id": "sample_ablation_20260503_063255_090739_UTC",
+      "created_at": "2026-05-03T06:32:02Z",
+      "split": "test",
+      "sampling_mode": "balanced",
+      "seed": 7,
+      "max_images": 200,
+      "max_images_per_class": 1,
+      "num_images_evaluated": 200,
+      "num_classes": 200,
+      "model_agreement_rate": 0.015,
+      "tflite_color_stability_rate": 0.215,
+      "tflite_top1_accuracy": 0.15,
+      "tflite_topk_accuracy": 0.285,
+      "hog_top1_accuracy": 0.0,
+      "hog_topk_accuracy": 0.02,
+      "output_dir": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\sample_ablation_20260503_063202_UTC"
+    },
+    {
+      "run_id": "sample_ablation_20260503_063347_619633_UTC",
+      "created_at": "2026-05-03T06:33:00Z",
+      "split": "test",
+      "sampling_mode": "balanced",
+      "seed": 42,
+      "max_images": 200,
+      "max_images_per_class": 2,
+      "num_images_evaluated": 200,
+      "num_classes": 200,
+      "model_agreement_rate": 0.005,
+      "tflite_color_stability_rate": 0.235,
+      "tflite_top1_accuracy": 0.105,
+      "tflite_topk_accuracy": 0.265,
+      "hog_top1_accuracy": 0.0,
+      "hog_topk_accuracy": 0.005,
+      "output_dir": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\sample_ablation_20260503_063300_UTC"
+    },
+    {
+      "run_id": "sample_ablation_20260503_063440_109357_UTC",
+      "created_at": "2026-05-03T06:33:52Z",
+      "split": "test",
+      "sampling_mode": "random",
+      "seed": 42,
+      "max_images": 200,
+      "max_images_per_class": null,
+      "num_images_evaluated": 200,
+      "num_classes": 114,
+      "model_agreement_rate": 0.02,
+      "tflite_color_stability_rate": 0.345,
+      "tflite_top1_accuracy": 0.465,
+      "tflite_topk_accuracy": 0.735,
+      "hog_top1_accuracy": 0.02,
+      "hog_topk_accuracy": 0.045,
+      "output_dir": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\sample_ablation_20260503_063353_UTC"
+    }
+  ],
+  "comparison_validity": {
+    "status": "not_direct",
+    "title": "Not directly comparable",
+    "summary": "These runs are not directly comparable because core comparison fields differ: sampling_mode, max_images_per_class. Matching core fields: dataset_path, split, max_images.",
+    "caveats": [
+      "These runs are not directly comparable because core comparison fields differ: sampling_mode, max_images_per_class.",
+      "Observed evaluation coverage differs across runs: num_classes.",
+      "Seed differences make this comparison more exploratory even though the core configuration may match."
+    ],
+    "differing_fields": [
+      "sampling_mode",
+      "max_images_per_class",
+      "num_classes",
+      "seed"
+    ],
+    "matched_fields": [
+      "dataset_path",
+      "split",
+      "max_images",
+      "num_images_evaluated"
+    ],
+    "unknown_fields": [
+      "max_images_per_class"
+    ],
+    "field_values": {
+      "dataset_path": [
+        "E:\\school\\659\\plantnet_300K\\plantnet_300K"
+      ],
+      "split": [
+        "test"
+      ],
+      "sampling_mode": [
+        "balanced",
+        "random"
+      ],
+      "max_images": [
+        "200"
+      ],
+      "max_images_per_class": [
+        "1",
+        "2",
+        "<unknown>"
+      ],
+      "num_images_evaluated": [
+        "200"
+      ],
+      "num_classes": [
+        "114",
+        "200"
+      ],
+      "seed": [
+        "42",
+        "7"
+      ]
+    }
+  }
+}

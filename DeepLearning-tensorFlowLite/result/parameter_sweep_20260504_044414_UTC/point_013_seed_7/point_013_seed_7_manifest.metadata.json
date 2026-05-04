@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "dataset_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample",
+  "resolved_image_root": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test",
+  "split": "test",
+  "num_images": 100,
+  "num_classes": 25,
+  "manifest_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_044414_UTC\\point_013_seed_7\\point_013_seed_7_manifest.csv",
+  "preview": [
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1396156\\081d7f75dd40d17f8029493305f7755f6d3080cd.jpg",
+      "label": "1396156",
+      "display_label": "Sedum kamtschaticum Fisch. & C.A.Mey.",
+      "split": "test",
+      "class_dir": "1396156"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1360550\\205a53c1577215f503481676822c923b36ead401.jpg",
+      "label": "1360550",
+      "display_label": "Hyoscyamus albus L.",
+      "split": "test",
+      "class_dir": "1360550"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1396161\\efc24a6d0ff0b8208836552eee4abe85139fe06c.jpg",
+      "label": "1396161",
+      "display_label": "Sedum ochroleucum Chaix",
+      "split": "test",
+      "class_dir": "1396161"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1397351\\fa357f8ed227acc7293f8acf53161e178712c650.jpg",
+      "label": "1397351",
+      "display_label": "Cirsium acaulon (L.) Scop.",
+      "split": "test",
+      "class_dir": "1397351"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1667445\\a7463ce2df026f1928bc2268761c06b9e0f8089c.jpg",
+      "label": "1667445",
+      "display_label": "Fragaria \u00d7 ananassa (Duchesne ex Weston) Duchesne ex Rozier",
+      "split": "test",
+      "class_dir": "1667445"
+    }
+  ],
+  "sampling_mode": "balanced",
+  "seed": 7,
+  "max_images_per_class": 5,
+  "class_distribution": {
+    "1358099": 4,
+    "1358760": 4,
+    "1359197": 4,
+    "1359620": 4,
+    "1360147": 4,
+    "1360550": 4,
+    "1360998": 4,
+    "1361824": 4,
+    "1363490": 4,
+    "1375966": 4,
+    "1391868": 4,
+    "1393933": 4,
+    "1396156": 4,
+    "1396161": 4,
+    "1397305": 4,
+    "1397351": 4,
+    "1412697": 4,
+    "1412699": 4,
+    "1412889": 4,
+    "1413002": 4,
+    "1419115": 4,
+    "1420795": 4,
+    "1529081": 4,
+    "1529107": 4,
+    "1667445": 4
+  },
+  "warning": null,
+  "error": null
+}

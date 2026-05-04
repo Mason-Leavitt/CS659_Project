@@ -1,0 +1,10 @@
+{
+  "accuracy": 0.7704687777062277,
+  "f1_macro": 0.5043483475640707,
+  "f1_weighted": 0.7557205159316354,
+  "precision_macro": 0.6631856089208333,
+  "recall_macro": 0.46956323405687383,
+  "roc_auc_ovr_macro": 0.9990730140362596,
+  "split": "train",
+  "num_classes": 1081
+}

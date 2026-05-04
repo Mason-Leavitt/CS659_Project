@@ -1,0 +1,63 @@
+{
+  "method": "hog_svm",
+  "subsampling": {
+    "train_sample_fraction": 0.05,
+    "max_train_images": 20000,
+    "max_val_images": 5000,
+    "max_test_images": 5000,
+    "actual_train_images": 10715,
+    "actual_val_images": 5000,
+    "actual_test_images": 5000
+  },
+  "hog_backend": "tensorflow",
+  "use_gpu_hog": true,
+  "hog_batch_size": 256,
+  "kernel": "linear",
+  "linear_head": "tf",
+  "tf_linear_epochs": 100,
+  "tf_linear_batch_size": 4096,
+  "tf_linear_learning_rate": 0.001,
+  "linear_head_tf_note": "Adam + sparse_categorical_crossentropy on logits (multiclass softmax); not the same optimization as sklearn LinearSVC (hinge, OvR).",
+  "C": 1.0,
+  "img_size": 128,
+  "hog_preset": "coarse",
+  "hog_orientations": 6,
+  "hog_pixels_per_cell": 32,
+  "hog_cells_per_block": 2,
+  "feature_dim": 216,
+  "n_train": 10715,
+  "n_validation": 5000,
+  "n_test": 5000,
+  "metrics": {
+    "train": {
+      "accuracy": 0.7745216985534298,
+      "f1_macro": 0.3324867956501965,
+      "f1_weighted": 0.7086180710990294,
+      "precision_macro": 0.3905501529786266,
+      "recall_macro": 0.34567113627247587,
+      "roc_auc_ovr_macro": 0.5681537200026728,
+      "note": "in-sample; optimistic vs val/test"
+    },
+    "validation": {
+      "accuracy": 0.7662,
+      "f1_macro": 0.3081463503735676,
+      "f1_weighted": 0.6979077000767792,
+      "precision_macro": 0.32025176587485454,
+      "recall_macro": 0.33026462806607004,
+      "roc_auc_ovr_macro": 0.4865489463298864
+    },
+    "test": {
+      "accuracy": 0.7714,
+      "f1_macro": 0.31815866913179297,
+      "f1_weighted": 0.7034645517651439,
+      "precision_macro": 0.3508711951546562,
+      "recall_macro": 0.3370199959944766,
+      "roc_auc_ovr_macro": 0.49018994653810344,
+      "note": "held-out; use for report headline if you tune on val only"
+    }
+  },
+  "validation_accuracy": 0.7662,
+  "f1_macro": 0.3081463503735676,
+  "precision_macro": 0.32025176587485454,
+  "recall_macro": 0.33026462806607004
+}

@@ -1,0 +1,137 @@
+{
+  "study_type": "sample_ablation_sensitivity_analysis",
+  "created_at": "2026-05-03T02:30:11Z",
+  "manifest_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\manifests\\plantnet_300K_manifest_test.csv",
+  "output_dir": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\sample_ablation_20260503_023011_UTC",
+  "num_images_requested": 10,
+  "num_images_attempted": 10,
+  "num_images_evaluated": 10,
+  "num_failures": 0,
+  "tflite_available": true,
+  "hog_available": true,
+  "labels_available": true,
+  "metrics": {
+    "model_agreement_rate": 0.0,
+    "model_agreement_count": 0,
+    "model_agreement_total": 10,
+    "tflite_color_stability_rate": 0.0,
+    "tflite_color_stability_count": 0,
+    "tflite_color_stability_total": 10,
+    "tflite_top1_accuracy": 0.0,
+    "hog_top1_accuracy": 0.0,
+    "tflite_topk_accuracy": 0.3,
+    "hog_topk_accuracy": 0.0,
+    "metrics_notes": [
+      "Model agreement rate: 0.0% (0/10 images).",
+      "TFLite predictions were stable across color correction: 0.0% (0/10 images)."
+    ]
+  },
+  "skipped": {},
+  "tflite_metrics": {
+    "tflite:color_correct=none:top_k=1": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=none:top_k=3": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 2,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=none:top_k=5": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 3,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=gray_world:top_k=1": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=gray_world:top_k=3": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 1,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=gray_world:top_k=5": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 2,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=max_rgb:top_k=1": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=max_rgb:top_k=3": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 1,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=max_rgb:top_k=5": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 3,
+      "score_type": "probability"
+    }
+  },
+  "hog_metrics": {
+    "hog_svm:top_k=1": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "decision_function"
+    },
+    "hog_svm:top_k=3": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "decision_function"
+    },
+    "hog_svm:top_k=5": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "decision_function"
+    }
+  },
+  "comparison": {
+    "agreement_count": 0,
+    "disagreement_count": 10,
+    "agreement_total": 10,
+    "mean_topk_overlap": 0.3
+  },
+  "caveats": []
+}

@@ -1,0 +1,161 @@
+{
+  "study_type": "sample_ablation_sensitivity_analysis",
+  "run_id": "sample_ablation_20260504_042207_700023_UTC",
+  "created_at": "2026-05-04T04:21:50Z",
+  "dataset_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample",
+  "split": "test",
+  "manifest_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_042043_UTC\\point_005_top_k_10\\point_005_top_k_10_manifest.csv",
+  "output_dir": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_042043_UTC\\point_005_top_k_10",
+  "max_images": 100,
+  "sampling_mode": "balanced",
+  "seed": 50,
+  "max_images_per_class": 5,
+  "tflite_color_correct_values": [
+    "none",
+    "gray_world",
+    "max_rgb"
+  ],
+  "tflite_top_k_values": [
+    1,
+    10
+  ],
+  "hog_top_k_values": [
+    1,
+    10
+  ],
+  "summary_top_k": 10,
+  "num_images_requested": 100,
+  "num_images_attempted": 100,
+  "num_images_evaluated": 100,
+  "num_failures": 0,
+  "num_classes": 25,
+  "class_distribution": {
+    "1358099": 4,
+    "1358760": 4,
+    "1359197": 4,
+    "1359620": 4,
+    "1360147": 4,
+    "1360550": 4,
+    "1360998": 4,
+    "1361824": 4,
+    "1363490": 4,
+    "1375966": 4,
+    "1391868": 4,
+    "1393933": 4,
+    "1396156": 4,
+    "1396161": 4,
+    "1397305": 4,
+    "1397351": 4,
+    "1412697": 4,
+    "1412699": 4,
+    "1412889": 4,
+    "1413002": 4,
+    "1419115": 4,
+    "1420795": 4,
+    "1529081": 4,
+    "1529107": 4,
+    "1667445": 4
+  },
+  "tflite_available": true,
+  "hog_available": true,
+  "labels_available": true,
+  "metrics": {
+    "model_agreement_rate": 0.01,
+    "model_agreement_count": 1,
+    "model_agreement_total": 100,
+    "tflite_color_stability_rate": 0.25,
+    "tflite_color_stability_count": 25,
+    "tflite_color_stability_total": 100,
+    "tflite_top1_accuracy": 0.25,
+    "hog_top1_accuracy": 0.0,
+    "tflite_topk_accuracy": 0.64,
+    "hog_topk_accuracy": 0.0,
+    "metrics_notes": [
+      "Model agreement rate: 1.0% (1/100 images).",
+      "TFLite predictions were stable across color correction: 25.0% (25/100 images)."
+    ]
+  },
+  "skipped": {},
+  "tflite_metrics": {
+    "tflite:color_correct=none:top_k=1": {
+      "attempted": 100,
+      "successful": 100,
+      "failed": 0,
+      "top1_correct": 25,
+      "topk_correct": 25,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=none:top_k=10": {
+      "attempted": 100,
+      "successful": 100,
+      "failed": 0,
+      "top1_correct": 25,
+      "topk_correct": 64,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=gray_world:top_k=1": {
+      "attempted": 100,
+      "successful": 100,
+      "failed": 0,
+      "top1_correct": 11,
+      "topk_correct": 11,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=gray_world:top_k=10": {
+      "attempted": 100,
+      "successful": 100,
+      "failed": 0,
+      "top1_correct": 11,
+      "topk_correct": 40,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=max_rgb:top_k=1": {
+      "attempted": 100,
+      "successful": 100,
+      "failed": 0,
+      "top1_correct": 24,
+      "topk_correct": 24,
+      "score_type": "probability"
+    },
+    "tflite:color_correct=max_rgb:top_k=10": {
+      "attempted": 100,
+      "successful": 100,
+      "failed": 0,
+      "top1_correct": 24,
+      "topk_correct": 63,
+      "score_type": "probability"
+    }
+  },
+  "hog_metrics": {
+    "hog_svm:top_k=1": {
+      "attempted": 100,
+      "successful": 100,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "decision_function"
+    },
+    "hog_svm:top_k=10": {
+      "attempted": 100,
+      "successful": 100,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "decision_function"
+    }
+  },
+  "comparison": {
+    "agreement_count": 1,
+    "disagreement_count": 99,
+    "agreement_total": 100,
+    "mean_topk_overlap": 0.68
+  },
+  "caveats": [
+    "Skipped ablation charts because chart writing was disabled for this run."
+  ],
+  "generated_files": {},
+  "failures_summary": {
+    "count": 0,
+    "by_model": {}
+  }
+}

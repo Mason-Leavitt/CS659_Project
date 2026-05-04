@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "dataset_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample",
+  "resolved_image_root": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test",
+  "split": "test",
+  "num_images": 100,
+  "num_classes": 25,
+  "manifest_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_042043_UTC\\point_022_seed_123\\point_022_seed_123_manifest.csv",
+  "preview": [
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1419115\\912f4ff4a7a4e0d47bd7e0cc0fb4bde1cd1be448.jpg",
+      "label": "1419115",
+      "display_label": "Pelargonium x hortorum L.H. Bailey",
+      "split": "test",
+      "class_dir": "1419115"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1529107\\307c63b1d138fc411fc93fa8e13c7c74af55c5eb.jpg",
+      "label": "1529107",
+      "display_label": "Sedum burrito Moran",
+      "split": "test",
+      "class_dir": "1529107"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1420795\\fb2a0513f5b5450b7f0524f161ba25f4fb08fb6e.jpg",
+      "label": "1420795",
+      "display_label": "Alocasia sanderiana W.Bull",
+      "split": "test",
+      "class_dir": "1420795"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1396161\\efc24a6d0ff0b8208836552eee4abe85139fe06c.jpg",
+      "label": "1396161",
+      "display_label": "Sedum ochroleucum Chaix",
+      "split": "test",
+      "class_dir": "1396161"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1358760\\1fcd8ca064d97ef1f0766e7b3e5bc6376787e167.jpg",
+      "label": "1358760",
+      "display_label": "Lavandula multifida L.",
+      "split": "test",
+      "class_dir": "1358760"
+    }
+  ],
+  "sampling_mode": "balanced",
+  "seed": 123,
+  "max_images_per_class": 5,
+  "class_distribution": {
+    "1358099": 4,
+    "1358760": 4,
+    "1359197": 4,
+    "1359620": 4,
+    "1360147": 4,
+    "1360550": 4,
+    "1360998": 4,
+    "1361824": 4,
+    "1363490": 4,
+    "1375966": 4,
+    "1391868": 4,
+    "1393933": 4,
+    "1396156": 4,
+    "1396161": 4,
+    "1397305": 4,
+    "1397351": 4,
+    "1412697": 4,
+    "1412699": 4,
+    "1412889": 4,
+    "1413002": 4,
+    "1419115": 4,
+    "1420795": 4,
+    "1529081": 4,
+    "1529107": 4,
+    "1667445": 4
+  },
+  "warning": null,
+  "error": null
+}

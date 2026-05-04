@@ -1,0 +1,140 @@
+{
+  "study_type": "sample_ablation_sensitivity_analysis",
+  "created_at": "2026-05-03T02:28:00Z",
+  "manifest_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\manifests\\plantnet_300K_manifest_test.csv",
+  "output_dir": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\sample_ablation_20260503_022800_UTC",
+  "num_images_requested": 10,
+  "num_images_attempted": 10,
+  "num_images_evaluated": 10,
+  "num_failures": 90,
+  "tflite_available": true,
+  "hog_available": true,
+  "labels_available": true,
+  "metrics": {
+    "model_agreement_rate": null,
+    "model_agreement_count": null,
+    "model_agreement_total": null,
+    "tflite_color_stability_rate": null,
+    "tflite_color_stability_count": null,
+    "tflite_color_stability_total": null,
+    "tflite_top1_accuracy": null,
+    "hog_top1_accuracy": 0.0,
+    "tflite_topk_accuracy": null,
+    "hog_topk_accuracy": 0.0,
+    "metrics_notes": [
+      "Model agreement rate was not computed because both models were not available on the same evaluated images.",
+      "TFLite color stability was not computed because complete color-correction predictions were unavailable."
+    ]
+  },
+  "skipped": {},
+  "tflite_metrics": {
+    "tflite:color_correct=none:top_k=1": {
+      "attempted": 10,
+      "successful": 0,
+      "failed": 10,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": null
+    },
+    "tflite:color_correct=none:top_k=3": {
+      "attempted": 10,
+      "successful": 0,
+      "failed": 10,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": null
+    },
+    "tflite:color_correct=none:top_k=5": {
+      "attempted": 10,
+      "successful": 0,
+      "failed": 10,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": null
+    },
+    "tflite:color_correct=gray_world:top_k=1": {
+      "attempted": 10,
+      "successful": 0,
+      "failed": 10,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": null
+    },
+    "tflite:color_correct=gray_world:top_k=3": {
+      "attempted": 10,
+      "successful": 0,
+      "failed": 10,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": null
+    },
+    "tflite:color_correct=gray_world:top_k=5": {
+      "attempted": 10,
+      "successful": 0,
+      "failed": 10,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": null
+    },
+    "tflite:color_correct=max_rgb:top_k=1": {
+      "attempted": 10,
+      "successful": 0,
+      "failed": 10,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": null
+    },
+    "tflite:color_correct=max_rgb:top_k=3": {
+      "attempted": 10,
+      "successful": 0,
+      "failed": 10,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": null
+    },
+    "tflite:color_correct=max_rgb:top_k=5": {
+      "attempted": 10,
+      "successful": 0,
+      "failed": 10,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": null
+    }
+  },
+  "hog_metrics": {
+    "hog_svm:top_k=1": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "decision_function"
+    },
+    "hog_svm:top_k=3": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "decision_function"
+    },
+    "hog_svm:top_k=5": {
+      "attempted": 10,
+      "successful": 10,
+      "failed": 0,
+      "top1_correct": 0,
+      "topk_correct": 0,
+      "score_type": "decision_function"
+    }
+  },
+  "comparison": {
+    "agreement_count": 0,
+    "disagreement_count": 0,
+    "agreement_total": 0,
+    "mean_topk_overlap": null
+  },
+  "caveats": [
+    "Skipped TFLite stability figure because there were not enough successful color-correction comparisons.",
+    "Skipped model agreement figure because both models were not available on the same evaluated images."
+  ]
+}

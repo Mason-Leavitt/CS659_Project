@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "dataset_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample",
+  "resolved_image_root": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test",
+  "split": "test",
+  "num_images": 25,
+  "num_classes": 25,
+  "manifest_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_034021_UTC\\point_020_seed_25\\point_020_seed_25_manifest.csv",
+  "preview": [
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1359620\\5000b55da65af30c9f0b4426d063c5b8ccb51bf2.jpg",
+      "label": "1359620",
+      "display_label": "Alcea rosea L.",
+      "split": "test",
+      "class_dir": "1359620"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1419115\\d9c5b6d9cf6537ff411be31ff2bfbc09c1104923.jpg",
+      "label": "1419115",
+      "display_label": "Pelargonium x hortorum L.H. Bailey",
+      "split": "test",
+      "class_dir": "1419115"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1529107\\6a4d66ef180cbd221086d954330d3da76fc92ed0.jpg",
+      "label": "1529107",
+      "display_label": "Sedum burrito Moran",
+      "split": "test",
+      "class_dir": "1529107"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1412697\\79c1fa4c67ab1b66f1b2b3b2ca819c822069f79a.jpg",
+      "label": "1412697",
+      "display_label": "Mertensia maritima (L.) Gray",
+      "split": "test",
+      "class_dir": "1412697"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1413002\\f1c9a8bb98699677b9373da6ebc2851a526b650b.jpg",
+      "label": "1413002",
+      "display_label": "Aralia nudicaulis L.",
+      "split": "test",
+      "class_dir": "1413002"
+    }
+  ],
+  "sampling_mode": "balanced",
+  "seed": 25,
+  "max_images_per_class": 1,
+  "class_distribution": {
+    "1358099": 1,
+    "1358760": 1,
+    "1359197": 1,
+    "1359620": 1,
+    "1360147": 1,
+    "1360550": 1,
+    "1360998": 1,
+    "1361824": 1,
+    "1363490": 1,
+    "1375966": 1,
+    "1391868": 1,
+    "1393933": 1,
+    "1396156": 1,
+    "1396161": 1,
+    "1397305": 1,
+    "1397351": 1,
+    "1412697": 1,
+    "1412699": 1,
+    "1412889": 1,
+    "1413002": 1,
+    "1419115": 1,
+    "1420795": 1,
+    "1529081": 1,
+    "1529107": 1,
+    "1667445": 1
+  },
+  "warning": null,
+  "error": null
+}

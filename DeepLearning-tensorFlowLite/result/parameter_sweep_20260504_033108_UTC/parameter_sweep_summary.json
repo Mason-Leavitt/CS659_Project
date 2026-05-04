@@ -1,0 +1,440 @@
+{
+  "success": true,
+  "status": "completed",
+  "study_type": "parameter_sweep",
+  "sweep_id": "parameter_sweep_20260504_033108_UTC",
+  "output_dir": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC",
+  "dataset_path": "dataset_sample",
+  "split": "test",
+  "total_planned_runs": 15,
+  "total_completed_runs": 15,
+  "total_failed_runs": 0,
+  "baseline_values": {
+    "top_k": 5,
+    "sampling_mode": "balanced",
+    "max_images": 200,
+    "max_images_per_class": 1,
+    "seed": 42
+  },
+  "baseline_sources": {
+    "top_k": "user",
+    "sampling_mode": "user",
+    "max_images": "user",
+    "max_images_per_class": "user",
+    "seed": "user"
+  },
+  "selected_metrics": [
+    "tflite_top1_accuracy",
+    "hog_top1_accuracy"
+  ],
+  "parameters_swept": [
+    "top_k",
+    "sampling_mode",
+    "max_images",
+    "max_images_per_class",
+    "seed"
+  ],
+  "artifacts": {
+    "plan_json": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\parameter_sweep_plan.json",
+    "results_csv": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\parameter_sweep_results.csv",
+    "summary_json": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\parameter_sweep_summary.json",
+    "summary_markdown": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\parameter_sweep_summary.md",
+    "charts_dir": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\charts"
+  },
+  "per_parameter_results": {
+    "top_k": [
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_001_top_k_1",
+        "varied_parameter": "top_k",
+        "varied_value": 1,
+        "top_k": 1,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.2,
+        "tflite_topk_accuracy": 0.2,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      },
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_002_top_k_3",
+        "varied_parameter": "top_k",
+        "varied_value": 3,
+        "top_k": 3,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.2,
+        "tflite_topk_accuracy": 0.32,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      },
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_003_top_k_5",
+        "varied_parameter": "top_k",
+        "varied_value": 5,
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.2,
+        "tflite_topk_accuracy": 0.52,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      }
+    ],
+    "sampling_mode": [
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_004_sampling_mode_balanced",
+        "varied_parameter": "sampling_mode",
+        "varied_value": "balanced",
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.2,
+        "tflite_topk_accuracy": 0.52,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      },
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_005_sampling_mode_random",
+        "varied_parameter": "sampling_mode",
+        "varied_value": "random",
+        "top_k": 5,
+        "sampling_mode": "random",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.2,
+        "tflite_topk_accuracy": 0.52,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      },
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_006_sampling_mode_sorted",
+        "varied_parameter": "sampling_mode",
+        "varied_value": "sorted",
+        "top_k": 5,
+        "sampling_mode": "sorted",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.36,
+        "tflite_topk_accuracy": 0.52,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      }
+    ],
+    "max_images": [
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_007_max_images_50",
+        "varied_parameter": "max_images",
+        "varied_value": 50,
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 50,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.2,
+        "tflite_topk_accuracy": 0.52,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      },
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_008_max_images_100",
+        "varied_parameter": "max_images",
+        "varied_value": 100,
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 100,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.2,
+        "tflite_topk_accuracy": 0.52,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      },
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_009_max_images_200",
+        "varied_parameter": "max_images",
+        "varied_value": 200,
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.2,
+        "tflite_topk_accuracy": 0.52,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      }
+    ],
+    "max_images_per_class": [
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_010_max_images_per_class_1",
+        "varied_parameter": "max_images_per_class",
+        "varied_value": 1,
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.2,
+        "tflite_topk_accuracy": 0.52,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      },
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_011_max_images_per_class_2",
+        "varied_parameter": "max_images_per_class",
+        "varied_value": 2,
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 2,
+        "seed": 42,
+        "num_images_evaluated": 50,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.22,
+        "tflite_topk_accuracy": 0.5,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      },
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_012_max_images_per_class_5",
+        "varied_parameter": "max_images_per_class",
+        "varied_value": 5,
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 5,
+        "seed": 42,
+        "num_images_evaluated": 125,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.248,
+        "tflite_topk_accuracy": 0.552,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      }
+    ],
+    "seed": [
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_013_seed_7",
+        "varied_parameter": "seed",
+        "varied_value": 7,
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 7,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.24,
+        "tflite_topk_accuracy": 0.4,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      },
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_014_seed_42",
+        "varied_parameter": "seed",
+        "varied_value": 42,
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.2,
+        "tflite_topk_accuracy": 0.52,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      },
+      {
+        "sweep_id": "parameter_sweep_20260504_033108_UTC",
+        "sweep_point_id": "point_015_seed_123",
+        "varied_parameter": "seed",
+        "varied_value": 123,
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 123,
+        "num_images_evaluated": 25,
+        "num_classes": 25,
+        "tflite_top1_accuracy": 0.16,
+        "tflite_topk_accuracy": 0.44,
+        "hog_top1_accuracy": 0.0,
+        "hog_topk_accuracy": 0.0,
+        "model_agreement_rate": 0.0,
+        "status": "completed",
+        "errors": ""
+      }
+    ]
+  },
+  "charts": [
+    {
+      "path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\charts\\sweep_top_k_metrics.png",
+      "filename": "sweep_top_k_metrics.png",
+      "varied_parameter": "top_k",
+      "metrics": [
+        "tflite_top1_accuracy",
+        "hog_top1_accuracy"
+      ],
+      "baseline_values": {
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42
+      },
+      "warnings": []
+    },
+    {
+      "path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\charts\\sweep_sampling_mode_metrics.png",
+      "filename": "sweep_sampling_mode_metrics.png",
+      "varied_parameter": "sampling_mode",
+      "metrics": [
+        "tflite_top1_accuracy",
+        "hog_top1_accuracy"
+      ],
+      "baseline_values": {
+        "top_k": 5,
+        "max_images": 200,
+        "max_images_per_class": 1,
+        "seed": 42
+      },
+      "warnings": []
+    },
+    {
+      "path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\charts\\sweep_max_images_metrics.png",
+      "filename": "sweep_max_images_metrics.png",
+      "varied_parameter": "max_images",
+      "metrics": [
+        "tflite_top1_accuracy",
+        "hog_top1_accuracy"
+      ],
+      "baseline_values": {
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images_per_class": 1,
+        "seed": 42
+      },
+      "warnings": []
+    },
+    {
+      "path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\charts\\sweep_max_images_per_class_metrics.png",
+      "filename": "sweep_max_images_per_class_metrics.png",
+      "varied_parameter": "max_images_per_class",
+      "metrics": [
+        "tflite_top1_accuracy",
+        "hog_top1_accuracy"
+      ],
+      "baseline_values": {
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "seed": 42
+      },
+      "warnings": []
+    },
+    {
+      "path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_033108_UTC\\charts\\sweep_seed_metrics.png",
+      "filename": "sweep_seed_metrics.png",
+      "varied_parameter": "seed",
+      "metrics": [
+        "tflite_top1_accuracy",
+        "hog_top1_accuracy"
+      ],
+      "baseline_values": {
+        "top_k": 5,
+        "sampling_mode": "balanced",
+        "max_images": 200,
+        "max_images_per_class": 1
+      },
+      "warnings": []
+    }
+  ],
+  "warnings": [],
+  "errors": []
+}

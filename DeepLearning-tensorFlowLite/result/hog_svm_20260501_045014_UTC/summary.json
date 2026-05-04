@@ -1,0 +1,16 @@
+{
+  "method": "hog_svm",
+  "kernel": "linear",
+  "C": 1.0,
+  "img_size": 224,
+  "hog_orientations": 9,
+  "hog_pixels_per_cell": 16,
+  "hog_cells_per_block": 2,
+  "feature_dim": 6084,
+  "n_train": 5525,
+  "n_val": 975,
+  "validation_accuracy": 0.14461538461538462,
+  "f1_macro": 0.14563334927556423,
+  "precision_macro": 0.14973090685907514,
+  "recall_macro": 0.14461538461538462
+}

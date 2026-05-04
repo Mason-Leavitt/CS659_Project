@@ -1,0 +1,47 @@
+# Sample Ablation Summary
+
+## Study Type
+This is a sample-based no-retraining sensitivity study for saved TFLite and HOG+SVM artifacts.
+
+## Inputs
+Manifest: `D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\DeepLearning-tensorFlowLite\result\parameter_sweep_20260504_044414_UTC\point_006_sampling_mode_sorted\point_006_sampling_mode_sorted_manifest.csv`
+Output directory: `D:\BackupFiles\School2023-Present\05_Spring2026\CS659\CS659_Project\DeepLearning-tensorFlowLite\result\parameter_sweep_20260504_044414_UTC\point_006_sampling_mode_sorted`
+Created at: `2026-05-04T04:46:40Z`
+
+## Models Evaluated
+TFLite available: True
+HOG+SVM available: True
+Labels available: True
+
+## Ablation Variables
+Sampling mode: sorted
+Sampling seed: 50
+Max images per class: 5
+TFLite color correction: none, gray_world, max_rgb
+TFLite top-k: 1, 5
+HOG+SVM top-k: 1, 5
+
+## Number of Images Attempted
+100 manifest row(s) were attempted and 100 image(s) were successfully evaluated.
+
+## Key Results
+Model agreement rate: 1.0% (1/100 images).
+TFLite predictions were stable across color correction: 26.0% (26/100 images).
+TFLite top-1 accuracy: 24.0%.
+HOG+SVM top-1 accuracy: 0.0%.
+TFLite top-k accuracy: 54.0%.
+HOG+SVM top-k accuracy: 0.0%.
+
+## Observations
+Model agreement rate: 1.0%.
+TFLite color stability: 26.0%.
+TFLite top-k accuracy exceeded HOG+SVM by 54.0 percentage points on this sample.
+Sample-size caveat: this run evaluated 100 image(s) using sorted sampling, so small samples may still underrepresent the full test split.
+
+## Failures / Skipped Items
+No per-image failures were recorded.
+No components were skipped.
+
+## Caveats
+Model agreement rate: 1.0% (1/100 images).
+TFLite predictions were stable across color correction: 26.0% (26/100 images).

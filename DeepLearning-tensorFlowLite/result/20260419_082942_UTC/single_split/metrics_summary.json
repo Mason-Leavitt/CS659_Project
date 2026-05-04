@@ -1,0 +1,10 @@
+{
+  "accuracy": 0.6200296154348678,
+  "f1_macro": 0.20255334438175254,
+  "f1_weighted": 0.6015809160835583,
+  "precision_macro": 0.23468397571404115,
+  "recall_macro": 0.20446638976521242,
+  "roc_auc_ovr_macro": NaN,
+  "final": true,
+  "num_classes": 1081
+}

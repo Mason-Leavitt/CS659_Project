@@ -1,0 +1,9 @@
+{
+  "train_sample_fraction": 0.05,
+  "max_train_images": 20000,
+  "max_val_images": 5000,
+  "max_test_images": 5000,
+  "actual_train_images": 10715,
+  "actual_val_images": 5000,
+  "actual_test_images": 5000
+}

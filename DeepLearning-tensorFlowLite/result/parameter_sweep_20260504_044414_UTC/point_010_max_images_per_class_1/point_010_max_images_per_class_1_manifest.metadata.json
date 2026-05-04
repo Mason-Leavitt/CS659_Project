@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "dataset_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample",
+  "resolved_image_root": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test",
+  "split": "test",
+  "num_images": 25,
+  "num_classes": 25,
+  "manifest_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\DeepLearning-tensorFlowLite\\result\\parameter_sweep_20260504_044414_UTC\\point_010_max_images_per_class_1\\point_010_max_images_per_class_1_manifest.csv",
+  "preview": [
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1375966\\7239a6a38002fdcf1ea4f43661973a40cbc0850d.jpg",
+      "label": "1375966",
+      "display_label": "Phyllanthus amarus Schumach. & Thonn.",
+      "split": "test",
+      "class_dir": "1375966"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1419115\\d0ef04f018260edc3c4040d9a3811a44924afa79.jpg",
+      "label": "1419115",
+      "display_label": "Pelargonium x hortorum L.H. Bailey",
+      "split": "test",
+      "class_dir": "1419115"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1397305\\7ce6795df9059dadcb206b1b0fd7f4a08ff1e0b2.jpg",
+      "label": "1397305",
+      "display_label": "Alcea biennis Winterl",
+      "split": "test",
+      "class_dir": "1397305"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1391868\\9935ab8a0b633dc2e054a4e10cb7621e5e8d3cf9.jpg",
+      "label": "1391868",
+      "display_label": "Empetrum nigrum L.",
+      "split": "test",
+      "class_dir": "1391868"
+    },
+    {
+      "image_path": "D:\\BackupFiles\\School2023-Present\\05_Spring2026\\CS659\\CS659_Project\\dataset_sample\\images\\test\\1420795\\fb2a0513f5b5450b7f0524f161ba25f4fb08fb6e.jpg",
+      "label": "1420795",
+      "display_label": "Alocasia sanderiana W.Bull",
+      "split": "test",
+      "class_dir": "1420795"
+    }
+  ],
+  "sampling_mode": "balanced",
+  "seed": 50,
+  "max_images_per_class": 1,
+  "class_distribution": {
+    "1358099": 1,
+    "1358760": 1,
+    "1359197": 1,
+    "1359620": 1,
+    "1360147": 1,
+    "1360550": 1,
+    "1360998": 1,
+    "1361824": 1,
+    "1363490": 1,
+    "1375966": 1,
+    "1391868": 1,
+    "1393933": 1,
+    "1396156": 1,
+    "1396161": 1,
+    "1397305": 1,
+    "1397351": 1,
+    "1412697": 1,
+    "1412699": 1,
+    "1412889": 1,
+    "1413002": 1,
+    "1419115": 1,
+    "1420795": 1,
+    "1529081": 1,
+    "1529107": 1,
+    "1667445": 1
+  },
+  "warning": null,
+  "error": null
+}

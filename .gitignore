@@ -136,13 +136,19 @@ celerybeat.pid
 
 # Environments
 .env
+agent/.env
 .envrc
 .venv
+.venv/
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Runtime uploads
+uploads/
+DeepLearning-tensorFlowLite/uploads/
 
 # Spyder project settings
 .spyderproject
